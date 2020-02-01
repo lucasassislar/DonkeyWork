@@ -8,6 +8,7 @@ namespace DonkeyWork {
     public class PlayerController : MonoBehaviour {
         private CharacterController playerController;
 
+        public float fMovementSpeed = 5;
         public float fGravity = -10;
         public float fMinVelocityY = -100;
 
@@ -36,7 +37,7 @@ namespace DonkeyWork {
                 fXMovement -= 1;
             }
 
-            vMovement.x = fXMovement * Time.deltaTime;
+            vMovement.x = fMovementSpeed * fXMovement * Time.deltaTime;
             vMovement.y = WorldState.MovementY;
 
             playerController.Move(vMovement);
