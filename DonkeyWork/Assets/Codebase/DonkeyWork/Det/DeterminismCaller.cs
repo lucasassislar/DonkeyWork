@@ -12,7 +12,7 @@ namespace DonkeyWork {
         public DeterminismManager Manager { get; private set; }
 
         public string strDetKey;
-        public string strTagToCheck = "Player";
+        public string strTagToCheck = "PlayerAttack";
 
         public bool bExpectedValue;
 
@@ -38,10 +38,11 @@ namespace DonkeyWork {
                 if (Manager.IsRuleEnabled(strDetKey) && bExpectedValue) {
                     if (c.transform.tag == strTagToCheck) {
                         eventOnTriggerEnter.Invoke();
-                        Debug.Log("colidio");
+                        Debug.Log("colidio trigger enter");
 
                         if (bChangeValue) {
                             Manager.ChangeRuleValue(strDetKey, bNewValue);
+                            Debug.Log("change rule value");
                         }
                     }
                 }else {

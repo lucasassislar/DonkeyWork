@@ -13,10 +13,10 @@ namespace DonkeyWork {
 
         // Start is called before the first frame update
         void OnTriggerEnter(Collider c) {
-            Debug.Log("colidio");
+            Debug.Log("colidio dialogue");
             if (c.transform.tag == tagToCheck) {
                 Activatedialogue.Invoke();
-                Debug.Log("colidio");
+  
             }
         }
 
