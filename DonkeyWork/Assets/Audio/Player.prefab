@@ -116,22 +116,22 @@ PrefabInstance:
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.029387644
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99956816
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
@@ -146,12 +146,22 @@ PrefabInstance:
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 3.3680003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950161334804060497, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175827873566985146, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.537
       objectReference: {fileID: 0}
     - target: {fileID: 6117221882045813072, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
@@ -183,10 +193,7 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.22
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5863492328343317715, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
-    - {fileID: 1214655157258254247, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
-    - {fileID: 1900115122841259219, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
 --- !u!4 &3003332768769102720 stripped
 Transform:

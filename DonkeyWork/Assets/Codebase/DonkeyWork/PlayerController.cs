@@ -8,6 +8,8 @@ namespace DonkeyWork {
     public class PlayerController : MonoBehaviour {
         private CharacterController playerController;
         private Animator animator;
+
+        [Header("Movement")]
         public float fMovementSpeed = 5;
 
         [Header("Physics")]
