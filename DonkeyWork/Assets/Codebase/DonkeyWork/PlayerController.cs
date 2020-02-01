@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace DonkeyWork {
     public class PlayerController : MonoBehaviour {
         private CharacterController playerController;
-
+        private Animator animator;
         public float fMovementSpeed = 5;
 
         [Header("Physics")]
@@ -18,7 +18,7 @@ namespace DonkeyWork {
 
         void Start() {
             playerController = GetComponent<CharacterController>();
-
+            animator = GetComponent<Animator>();
             WorldState = new PlayerWorldState();
         }
 
@@ -33,6 +33,10 @@ namespace DonkeyWork {
             }
 
             float fXMovement = 0;
+            if (keyboard.enterKey.isPressed)
+            {
+                animator.Play("Attack");
+            }
             if (keyboard.leftArrowKey.isPressed) {
                 fXMovement = -1;
             } else if (keyboard.rightArrowKey.isPressed) { 
