@@ -8,6 +8,9 @@ namespace DonkeyWork {
     public class PlayerController : MonoBehaviour {
         private CharacterController playerController;
 
+        public float fMovementSpeed = 5;
+
+        [Header("Physics")]
         public float fGravity = -10;
         public float fMinVelocityY = -100;
 
@@ -31,12 +34,12 @@ namespace DonkeyWork {
 
             float fXMovement = 0;
             if (keyboard.leftArrowKey.isPressed) {
-                fXMovement = 1;
+                fXMovement = -1;
             } else if (keyboard.rightArrowKey.isPressed) { 
-                fXMovement -= 1;
+                fXMovement = 1;
             }
 
-            vMovement.x = fXMovement * Time.deltaTime;
+            vMovement.x = fMovementSpeed * fXMovement * Time.deltaTime;
             vMovement.y = WorldState.MovementY;
 
             playerController.Move(vMovement);
