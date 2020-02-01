@@ -12,6 +12,7 @@ namespace DonkeyWork {
 
         [Header("Movement")]
         public float fMovementSpeed = 5;
+        public float fLockZ = -3;
 
         [Header("Physics")]
         public float fGravity = -10;
@@ -66,6 +67,10 @@ namespace DonkeyWork {
             vMovement.y = WorldState.MovementY;
 
             playerController.Move(vMovement);
+
+            Vector3 vPos = transform.position;
+            vPos.z = fLockZ;
+            transform.position = vPos;
         }
     }
 }
