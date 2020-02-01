@@ -23,7 +23,11 @@ namespace DonkeyWork {
             if (this.targets != null && this.targets.Length <= 1) {
                 DeterminismCaller caller = (DeterminismCaller)target;
 
-                string[] keys = (from rule in caller.Manager.rules
+                if (caller.Manager.rulesAsset == null) {
+                    return;
+                }
+
+                string[] keys = (from rule in caller.Manager.rulesAsset.rules
                                     select rule.Name).ToArray();
 
                 int selectedIndex = -1;
@@ -40,8 +44,8 @@ namespace DonkeyWork {
                 caller.strTagToCheck = EditorGUILayout.TextField("Tag To Check", caller.strTagToCheck);
                 caller.bExpectedValue = EditorGUILayout.Toggle("Expected Rule Value", caller.bExpectedValue);
 
-
                 this.serializedObject.Update();
+                EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnAwake"), true);
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnTriggerEnter"), true);
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnTriggerExit"), true);
                 this.serializedObject.ApplyModifiedProperties();
