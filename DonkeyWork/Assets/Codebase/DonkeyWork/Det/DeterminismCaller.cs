@@ -34,32 +34,32 @@ namespace DonkeyWork {
         }
 
         void OnTriggerEnter(Collider c) {
-            if (bExpectedValue) {
-                if (Manager.IsRuleEnabled(strDetKey) && bExpectedValue) {
-                    if (c.transform.tag == strTagToCheck) {
-                        eventOnTriggerEnter.Invoke();
-                        Debug.Log("colidio trigger enter");
+            if (c.transform.tag != strTagToCheck) {
+                return;
+            }
 
-                        if (bChangeValue) {
-                            Manager.ChangeRuleValue(strDetKey, bNewValue);
-                            Debug.Log("change rule value");
-                        }
-                    }
-                }else {
-                    Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
+            if (Manager.IsRuleEnabled(strDetKey) == bExpectedValue) {
+                eventOnTriggerEnter.Invoke();
+                Debug.Log("colidio trigger enter");
+
+                if (bChangeValue) {
+                    Manager.ChangeRuleValue(strDetKey, bNewValue);
+                    Debug.Log("change rule value");
                 }
+            } else {
+                Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
             }
         }
 
         void OnTriggerExit(Collider c) {
-            if (bExpectedValue) {
-                if (Manager.IsRuleEnabled(strDetKey)) {
-                    if (c.transform.tag == strTagToCheck) {
-                        eventOnTriggerExit.Invoke();
-                    }
-                } else {
-                    Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
-                }
+            if (c.transform.tag != strTagToCheck) {
+                return;
+            }
+
+            if (Manager.IsRuleEnabled(strDetKey) == bExpectedValue) {
+                eventOnTriggerExit.Invoke();
+            } else {
+                Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
             }
         }
     }
