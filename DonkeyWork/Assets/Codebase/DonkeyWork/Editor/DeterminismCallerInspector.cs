@@ -59,7 +59,7 @@ namespace DonkeyWork {
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnTriggerExit"), true);
                 this.serializedObject.ApplyModifiedProperties();
 
-                EditorUtility.SetDirty(caller);
+                //EditorUtility.SetDirty(caller);
             }
         }
     }
