@@ -60,8 +60,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.22
-  m_Radius: 1.32
+  m_Height: 2.65
+  m_Radius: 0.93
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -152,46 +152,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5950161334804060497, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.07999992
-      objectReference: {fileID: 0}
-    - target: {fileID: 5175827873566985146, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.537
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117221882045813072, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_Name
-      value: Leg
-      objectReference: {fileID: 0}
-    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 4.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 7.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_Center.y
-      value: -0.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
