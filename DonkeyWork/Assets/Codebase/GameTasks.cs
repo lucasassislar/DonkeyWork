@@ -7,15 +7,20 @@ using UnityEngine;
 
 namespace DonkeyWork {
     public class GameTasks : MonoBehaviour {
-
         public void EnableKinChildren(Transform parent) {
             foreach (Transform tr in parent) {
-                Rigidbody body = tr.GetComponent<Rigidbody>();
-                if (!body) {
-                    continue;
-                }
+                RecursiveEnableKinChildren(tr);
+            }
+        }
 
+        private void RecursiveEnableKinChildren(Transform parent) {
+            Rigidbody body = parent.GetComponent<Rigidbody>();
+            if (body) {
                 body.isKinematic = false;
+            }
+
+            foreach (Transform tr in parent) {
+                RecursiveEnableKinChildren(tr);
             }
         }
     }

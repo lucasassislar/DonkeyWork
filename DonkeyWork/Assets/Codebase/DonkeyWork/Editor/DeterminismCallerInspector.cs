@@ -28,9 +28,7 @@ namespace DonkeyWork {
                     return;
                 }
 
-                if (!caller.Manager.rulesAsset.bLoaded) {
-                    caller.Manager.rulesAsset.Load();
-                }
+                caller.Manager.rulesAsset.LoadIfNot();
 
                 string[] keys = (from rule in caller.Manager.rulesAsset.rules
                                  select rule.Name).ToArray();
@@ -59,7 +57,7 @@ namespace DonkeyWork {
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnTriggerExit"), true);
                 this.serializedObject.ApplyModifiedProperties();
 
-                EditorUtility.SetDirty(caller);
+                //EditorUtility.SetDirty(caller);
             }
         }
     }

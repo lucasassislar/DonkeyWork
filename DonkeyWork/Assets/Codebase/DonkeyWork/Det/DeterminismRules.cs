@@ -45,6 +45,13 @@ namespace DonkeyWork {
             }
         }
 
+        public void LoadIfNot() {
+            if (!bLoaded ||
+                serialized!= null && serialized.Length > 0 && (rules == null || rules.Count == 0)) {
+                Load();
+            }
+        }
+
         public void Load() {
             if (serialized == null) {
                 return;
