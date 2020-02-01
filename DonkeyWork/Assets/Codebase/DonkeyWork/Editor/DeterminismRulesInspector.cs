@@ -20,7 +20,19 @@ namespace DonkeyWork {
                 DeterminismRules det = (DeterminismRules)target;
 
                 if (det.rules == null) {
-                    det.rules = new List<DeterministicRule>();
+                    det.Load();
+                    if (det.rules == null) {
+                        det.rules = new List<DeterministicRule>();
+                    }
+                }
+
+                if (GUILayout.Button("Save")) {
+                    det.Save();
+                    EditorUtility.SetDirty(det);
+                }
+
+                if (GUILayout.Button("Load")) {
+                    det.Load();
                 }
 
                 if (GUILayout.Button("Add Rule")) {
@@ -46,7 +58,6 @@ namespace DonkeyWork {
                         }
                     }
                 }
-
 
             }
         }
