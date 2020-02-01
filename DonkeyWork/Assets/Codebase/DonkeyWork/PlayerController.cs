@@ -8,6 +8,8 @@ namespace DonkeyWork {
     public class PlayerController : MonoBehaviour {
         private CharacterController playerController;
         private Animator animator;
+
+        [Header("Movement")]
         public float fMovementSpeed = 5;
 
         [Header("Physics")]
@@ -32,16 +34,18 @@ namespace DonkeyWork {
                 return;
             }
 
-            if (keyboard.enterKey.isPressed) {
+            if (keyboard.enterKey.isPressed ||
+                keyboard.spaceKey.isPressed) {
                 animator.Play("Attack");
             }
 
             float fXMovement = 0;
-            if (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed) {
+            if (keyboard.leftArrowKey.isPressed ||
+                keyboard.aKey.isPressed) {
                 fXMovement = -1;
                 transform.localScale = new Vector3(-1, 1, 1);
-            }
-            else if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed) {
+            } else if (keyboard.rightArrowKey.isPressed ||
+              keyboard.dKey.isPressed) {
                 fXMovement = 1;
                 transform.localScale = new Vector3(1, 1, 1);
             }
