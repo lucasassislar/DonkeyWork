@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2804006946110307408}
+  - component: {fileID: 868670717}
   - component: {fileID: 2804006946110307409}
   - component: {fileID: 2804006946110307410}
   - component: {fileID: 8371087979979266224}
@@ -34,6 +35,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868670717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2804006946110307411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86ec5c08a69fbe4cb220c81a5b572c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animations:
+  - strName: Idle
+    nStartFrame: 0
+    nEndFrame: 4
+    fAnimationFPS: 6
+  - strName: Walking
+    nStartFrame: 8
+    nEndFrame: 12
+    fAnimationFPS: 6
+  - strName: Kicking
+    nStartFrame: 5
+    nEndFrame: 8
+    fAnimationFPS: 6
+  matSprite: {fileID: 2100000, guid: 2094dd5c5d82c3f4f873626eed47c736, type: 2}
+  nSpriteSheetFrames: 13
 --- !u!114 &2804006946110307409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,13 +88,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.22
+  m_Height: 4.35
   m_Radius: 1.32
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.36, z: 0}
 --- !u!95 &8371087979979266224
 Animator:
   serializedVersion: 3
@@ -97,11 +125,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerArt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6117221882045813072, guid: fec1af4f616ae71428fa7763b6ec4341,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlayerAttack
       objectReference: {fileID: 0}
     - target: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
@@ -157,6 +180,38 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773518545550877, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773518545550877, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773518545550877, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117221882045813072, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444472214189208040, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459883815506307122, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.137
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}

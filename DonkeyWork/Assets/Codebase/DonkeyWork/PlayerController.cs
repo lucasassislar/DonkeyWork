@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace DonkeyWork {
     public class PlayerController : MonoBehaviour {
+        private SpritePlaneAnimation spriteAnimation;
         private CharacterController playerController;
         private Animator animator;
 
@@ -20,6 +21,7 @@ namespace DonkeyWork {
 
         void Start() {
             playerController = GetComponent<CharacterController>();
+            spriteAnimation = GetComponent<SpritePlaneAnimation>();
             animator = GetComponent<Animator>();
             WorldState = new PlayerWorldState();
         }
@@ -37,6 +39,7 @@ namespace DonkeyWork {
             if (keyboard.enterKey.isPressed ||
                 keyboard.spaceKey.isPressed) {
                 animator.Play("Attack");
+                spriteAnimation.Play("Kicking");
             }
 
             float fXMovement = 0;
@@ -50,6 +53,13 @@ namespace DonkeyWork {
                 keyboard.dKey.isPressed) {
                 fXMovement += 1;
                 transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            bool bWaitFinish = spriteAnimation.CurrentAnimation == "Kicking";
+            if (fXMovement > 0.1f || fXMovement < -0.1f) {
+                spriteAnimation.Play("Walking", bWaitFinish);
+            }else {
+                spriteAnimation.Play("Idle", bWaitFinish);
             }
 
             vMovement.x = fMovementSpeed * fXMovement * Time.deltaTime;
