@@ -32,15 +32,18 @@ namespace DonkeyWork {
                 return;
             }
 
-            float fXMovement = 0;
-            if (keyboard.enterKey.isPressed)
-            {
+            if (keyboard.enterKey.isPressed) {
                 animator.Play("Attack");
             }
-            if (keyboard.leftArrowKey.isPressed) {
+
+            float fXMovement = 0;
+            if (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed) {
                 fXMovement = -1;
-            } else if (keyboard.rightArrowKey.isPressed) { 
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed) {
                 fXMovement = 1;
+                transform.localScale = new Vector3(1, 1, 1);
             }
 
             vMovement.x = fMovementSpeed * fXMovement * Time.deltaTime;
