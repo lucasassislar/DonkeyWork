@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 namespace DonkeyWork {
@@ -43,6 +44,10 @@ namespace DonkeyWork {
 
                 caller.strTagToCheck = EditorGUILayout.TextField("Tag To Check", caller.strTagToCheck);
                 caller.bExpectedValue = EditorGUILayout.Toggle("Expected Rule Value", caller.bExpectedValue);
+                caller.bChangeValue = EditorGUILayout.Toggle("Trigger Enter change rule value", caller.bChangeValue);
+                if (caller.bChangeValue) {
+                    caller.bNewValue = EditorGUILayout.Toggle("Change To What Value", caller.bNewValue);
+                }
 
                 this.serializedObject.Update();
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnAwake"), true);

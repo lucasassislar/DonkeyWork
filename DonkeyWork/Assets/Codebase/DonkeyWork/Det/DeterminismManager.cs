@@ -19,5 +19,9 @@ namespace DonkeyWork {
         public bool IsRuleEnabled(string key) {
             return rulesAsset.rules.First(c => c.Name.Equals(key)).Value;
         }
+
+        public void ChangeRuleValue(string strKey, bool bNewValue) {
+            rulesAsset.rules.First(c => c.Name.Equals(strKey)).Value = bNewValue;
+        }
     }
 }

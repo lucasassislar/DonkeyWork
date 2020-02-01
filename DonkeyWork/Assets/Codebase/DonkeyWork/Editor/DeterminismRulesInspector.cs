@@ -37,6 +37,8 @@ namespace DonkeyWork {
                     rule.IsEditorOpen = EditorGUILayout.Foldout(rule.IsEditorOpen, rule.Name);
                     if (rule.IsEditorOpen) {
                         rule.Name = EditorGUILayout.TextField("Key", rule.Name);
+                        rule.Description = EditorGUILayout.TextField("Description", rule.Description);
+                        
                         rule.StartValue = GUILayout.Toggle(rule.StartValue, "Start Value");
 
                         if (GUILayout.Button("Delete")) {
