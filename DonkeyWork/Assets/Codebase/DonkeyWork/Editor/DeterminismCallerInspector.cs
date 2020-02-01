@@ -28,9 +28,7 @@ namespace DonkeyWork {
                     return;
                 }
 
-                if (!caller.Manager.rulesAsset.bLoaded) {
-                    caller.Manager.rulesAsset.Load();
-                }
+                caller.Manager.rulesAsset.LoadIfNot();
 
                 string[] keys = (from rule in caller.Manager.rulesAsset.rules
                                  select rule.Name).ToArray();
