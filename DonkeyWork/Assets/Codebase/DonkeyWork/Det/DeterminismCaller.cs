@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
+
 
 namespace DonkeyWork {
     [ExecuteInEditMode]
@@ -22,9 +24,11 @@ namespace DonkeyWork {
         public UnityEvent eventOnTriggerEnter;
         public UnityEvent eventOnTriggerExit;
         public UnityEvent eventOnAwake;
-
+        public float timeToCallBoss = 2f;
+        private PlayableDirector BossComeTimeLine;
         private void Start() {
             Manager = DeterminismManager.Instance;
+            BossComeTimeLine = GetComponent<PlayableDirector>();
         }
 
         private void Awake() {
@@ -45,6 +49,7 @@ namespace DonkeyWork {
                 if (bChangeValue) {
                     Manager.ChangeRuleValue(strDetKey, bNewValue);
                     Debug.Log("change rule value");
+                    Invoke("BossComeToTellPlayerOff",timeToCallBoss);
                 }
             } else {
                 Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
@@ -61,6 +66,11 @@ namespace DonkeyWork {
             } else {
                 Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
             }
+        }
+        void BossComeToTellPlayerOff()
+        {
+            Debug.Log("called Timeline");
+           if(BossComeTimeLine) BossComeTimeLine.Play();
         }
     }
 }
