@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:DonkeyWork/Assets/Gameplay.meta
 guid: e951fb570b3cd6942b8c74fed5b2ccf0
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 903248d5874d7bc438d0116ce3d7fa72
+PrefabImporter:
+>>>>>>> a83f9ec16e385517524e0bc41b334507f6540898:DonkeyWork/Assets/Prefabs/Gaiola.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
