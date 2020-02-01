@@ -22,6 +22,8 @@ namespace DonkeyWork {
                 return;
             }
 
+            rulesAsset.Load();
+
             for (int i = 0; i < rulesAsset.rules.Count; i++) {
                 DeterministicRule rule = rulesAsset.rules[i];
                 rule.Value = rule.StartValue;

@@ -13,13 +13,14 @@ namespace DonkeyWork {
             ScreenCapture.CaptureScreenshot(@"Assets\Textures\Screenshots\screenshot_" + files.Length + ".png", 4);
         }
 
+
         public override void OnInspectorGUI() {
             //base.OnInspectorGUI();
 
             if (this.targets != null && this.targets.Length <= 1) {
                 DeterminismRules det = (DeterminismRules)target;
 
-                if (det.rules == null) {
+                if (det.bLoaded) { 
                     det.Load();
                     if (det.rules == null) {
                         det.rules = new List<DeterministicRule>();
