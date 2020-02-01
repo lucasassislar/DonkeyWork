@@ -10,20 +10,14 @@ namespace DonkeyWork {
     public class DeterminismManager : MonoBehaviour {
         public static DeterminismManager Instance { get; private set; }
 
-        public List<DeterministicRule> rules;
-
-        public UnityEvent test;
+        public DeterminismRules rulesAsset;
 
         public DeterminismManager() {
             Instance = this;
         }
 
-        private void Start() {
-
-        }
-
         public bool IsRuleEnabled(string key) {
-            return rules.First(c => c.Name.Equals(key)).Value;
+            return rulesAsset.rules.First(c => c.Name.Equals(key)).Value;
         }
     }
 }

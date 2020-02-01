@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3032534652573924845}
   - component: {fileID: 996381}
-  - component: {fileID: 548126460543294562}
   m_Layer: 0
   m_Name: Determinism
   m_TagString: Untagged
@@ -44,45 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5fe01fab7ef42419511731ccaaac36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rules:
-  - Name: GreenBird
-    StartValue: 0
-    Value: 0
-    IsEditorOpen: 1
-  - Name: Rule 2
-    StartValue: 0
-    Value: 0
-    IsEditorOpen: 1
-  test:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &548126460543294562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3032534652573924842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf28ab1ced3c2ca4a9d56cdf9479220e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strDetKey: GreenBird
-  strTagToCheck: Player
-  bExpectedValue: 0
-  eventOnTriggerEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  eventOnTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  rulesAsset: {fileID: 11400000, guid: de561ecf7b9da184f8ecefc735526503, type: 2}
 --- !u!1 &3032534653327945044
 GameObject:
   m_ObjectHideFlags: 0

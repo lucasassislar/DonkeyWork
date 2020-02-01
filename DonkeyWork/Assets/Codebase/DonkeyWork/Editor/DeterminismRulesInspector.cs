@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEditor;
-using UnityEditor.UIElements;
-using UnityEngine;
 using UnityEngine;
 
 namespace DonkeyWork {
-    [CustomEditor(typeof(DeterminismManager)), CanEditMultipleObjects]
-    public class DeterminismManagerInspector : Editor {
+    [CustomEditor(typeof(DeterminismRules)), CanEditMultipleObjects]
+    public class DeterminismRulesInspector : Editor {
 
         [MenuItem("Tools/Take screenshot")]
         static void Screenshot() {
@@ -23,7 +17,7 @@ namespace DonkeyWork {
             //base.OnInspectorGUI();
 
             if (this.targets != null && this.targets.Length <= 1) {
-                DeterminismManager det = (DeterminismManager)target;
+                DeterminismRules det = (DeterminismRules)target;
 
                 if (det.rules == null) {
                     det.rules = new List<DeterministicRule>();
@@ -44,6 +38,10 @@ namespace DonkeyWork {
                     if (rule.IsEditorOpen) {
                         rule.Name = EditorGUILayout.TextField("Key", rule.Name);
                         rule.StartValue = GUILayout.Toggle(rule.StartValue, "Start Value");
+
+                        if (GUILayout.Button("Delete")) {
+                            det.rules.RemoveAt(i--);
+                        }
                     }
                 }
 

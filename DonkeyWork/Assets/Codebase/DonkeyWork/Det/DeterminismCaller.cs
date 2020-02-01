@@ -18,9 +18,16 @@ namespace DonkeyWork {
 
         public UnityEvent eventOnTriggerEnter;
         public UnityEvent eventOnTriggerExit;
+        public UnityEvent eventOnAwake;
 
         private void Start() {
             Manager = DeterminismManager.Instance;
+        }
+
+        private void Awake() {
+            if (bExpectedValue && Manager.IsRuleEnabled(strDetKey)) {
+                eventOnAwake.Invoke();
+            }
         }
 
         void OnTriggerEnter(Collider c) {
