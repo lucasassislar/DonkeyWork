@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ namespace DonkeyWork {
         private CharacterController playerController;
 
         public float fGravity = -10;
+        public float fMinVelocityY = -100;
 
         public PlayerWorldState WorldState { get; private set; }
 
@@ -19,7 +21,8 @@ namespace DonkeyWork {
 
         void Update() {
             Vector3 vMovement = new Vector3();
-            WorldState.MovementY -= fGravity * Time.deltaTime;
+            WorldState.MovementY += fGravity * Time.deltaTime;
+            WorldState.MovementY = Math.Max(fMinVelocityY, WorldState.MovementY);
 
             Keyboard keyboard = Keyboard.current;
             if (keyboard == null) {
@@ -33,7 +36,7 @@ namespace DonkeyWork {
                 fXMovement -= 1;
             }
 
-            vMovement.x = fXMovement;
+            vMovement.x = fXMovement * Time.deltaTime;
             vMovement.y = WorldState.MovementY;
 
             playerController.Move(vMovement);
