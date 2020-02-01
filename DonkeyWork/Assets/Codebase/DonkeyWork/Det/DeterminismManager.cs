@@ -21,5 +21,9 @@ namespace DonkeyWork {
         private void Start() {
 
         }
+
+        public bool IsRuleEnabled(string key) {
+            return rules.First(c => c.Name.Equals(key)).Value;
+        }
     }
 }

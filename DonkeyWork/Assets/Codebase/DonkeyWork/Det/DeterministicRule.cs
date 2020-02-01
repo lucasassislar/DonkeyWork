@@ -16,5 +16,9 @@ namespace DonkeyWork {
 
         [HideInInspector]
         public bool IsEditorOpen;
+
+        public DeterministicRule() {
+            IsEditorOpen = true;
+        }
     }
 }

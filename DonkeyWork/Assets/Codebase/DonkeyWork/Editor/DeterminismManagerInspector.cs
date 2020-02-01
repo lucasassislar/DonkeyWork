@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine;
 
 namespace DonkeyWork {
     [CustomEditor(typeof(DeterminismManager)), CanEditMultipleObjects]
@@ -25,6 +25,14 @@ namespace DonkeyWork {
             if (this.targets != null && this.targets.Length <= 1) {
                 DeterminismManager det = (DeterminismManager)target;
 
+                if (det.rules == null) {
+                    det.rules = new List<DeterministicRule>();
+                }
+
+                if (GUILayout.Button("Add Rule")) {
+                    det.rules.Add(new DeterministicRule());
+                }
+
                 for (int i = 0; i < det.rules.Count; i++) {
                     DeterministicRule rule = det.rules[i];
                     
@@ -34,10 +42,11 @@ namespace DonkeyWork {
 
                     rule.IsEditorOpen = EditorGUILayout.Foldout(rule.IsEditorOpen, rule.Name);
                     if (rule.IsEditorOpen) {
-                        
+                        rule.Name = EditorGUILayout.TextField("Key", rule.Name);
                         rule.StartValue = GUILayout.Toggle(rule.StartValue, "Start Value");
                     }
                 }
+
 
             }
         }
