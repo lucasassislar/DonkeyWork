@@ -16,6 +16,9 @@ namespace DonkeyWork {
 
         public bool bExpectedValue;
 
+        public bool bChangeValue;
+        public bool bNewValue;
+
         public UnityEvent eventOnTriggerEnter;
         public UnityEvent eventOnTriggerExit;
         public UnityEvent eventOnAwake;
@@ -32,10 +35,13 @@ namespace DonkeyWork {
 
         void OnTriggerEnter(Collider c) {
             if (bExpectedValue && Manager.IsRuleEnabled(strDetKey)) {
-                Debug.Log("colidio");
                 if (c.transform.tag == strTagToCheck) {
                     eventOnTriggerEnter.Invoke();
                     Debug.Log("colidio");
+
+                    if (bChangeValue) {
+                        Manager.ChangeRuleValue(strDetKey, bNewValue);
+                    }
                 }
             }
         }

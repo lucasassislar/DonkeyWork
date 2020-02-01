@@ -10,6 +10,7 @@ namespace DonkeyWork {
     public class DeterministicRule {
         public string Name;
         public bool StartValue;
+        public string Description;
         
         [HideInInspector]
         public bool Value;
