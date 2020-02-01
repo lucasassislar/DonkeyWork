@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace DonkeyWork {
     [Serializable]
     public class DeterministicRule {
-        public string Name { get; set; }
-        public bool StartValue { get; set; }
+        public string Name;
+        public bool StartValue;
+        
+        [HideInInspector]
+        public bool Value;
 
-        public bool Value { get; set; }
+        [HideInInspector]
+        public bool IsEditorOpen;
     }
 }
