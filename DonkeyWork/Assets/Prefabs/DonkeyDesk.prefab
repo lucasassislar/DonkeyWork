@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1259700772, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1574502166, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -236,24 +236,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 985800, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1574502167, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
       propertyPath: m_Text
       value: 'YOU HAVE WORK TO DO!
 
 
-        - Tell the Green Bird about this afternoon meeting
+        - Tell the Blue Jay about her meeting
 
-        - Ask'
+        - Bring the Boss a glass of water
+
+        - Change into your cleaning uniform
+
+        - Clean the exit window'
       objectReference: {fileID: 0}
     - target: {fileID: 1574502167, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1574502167, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574502167, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574502167, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638615160, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.009433985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638615160, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.009433985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638615160, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.009433985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5bde6e3175ed1d429cc6ae86695a62c, type: 3}
