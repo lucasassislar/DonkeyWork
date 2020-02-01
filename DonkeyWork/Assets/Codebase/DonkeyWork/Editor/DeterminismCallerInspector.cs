@@ -28,6 +28,10 @@ namespace DonkeyWork {
                     return;
                 }
 
+                if (!caller.Manager.rulesAsset.bLoaded) {
+                    caller.Manager.rulesAsset.Load();
+                }
+
                 string[] keys = (from rule in caller.Manager.rulesAsset.rules
                                  select rule.Name).ToArray();
 
@@ -54,6 +58,8 @@ namespace DonkeyWork {
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnTriggerEnter"), true);
                 EditorGUILayout.PropertyField(this.serializedObject.FindProperty("eventOnTriggerExit"), true);
                 this.serializedObject.ApplyModifiedProperties();
+
+                EditorUtility.SetDirty(caller);
             }
         }
     }
