@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57cdfe89f10b0c4386f93a97b87cfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fGravity: 10
+  fMovementSpeed: 5
+  fGravity: -10
+  fMinVelocityY: -100
 --- !u!143 &2804006946110307410
 CharacterController:
   m_ObjectHideFlags: 0

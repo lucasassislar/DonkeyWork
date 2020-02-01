@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 148476085589821339, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
         type: 3}
       propertyPath: m_Name
-      value: GreyBird
+      value: BlueBird
       objectReference: {fileID: 0}
     - target: {fileID: 148476085589821342, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
         type: 3}
@@ -81,6 +81,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 148476085589821340, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.0387816
+      objectReference: {fileID: 0}
+    - target: {fileID: 148476085589821340, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.6297444
+      objectReference: {fileID: 0}
+    - target: {fileID: 148476085589821340, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -3.625396
+      objectReference: {fileID: 0}
+    - target: {fileID: 148476085589821340, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.31487647
       objectReference: {fileID: 0}
     - target: {fileID: 148476085653033513, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
         type: 3}
