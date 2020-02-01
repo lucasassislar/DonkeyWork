@@ -16,8 +16,8 @@ namespace DonkeyWork {
 
         public bool bExpectedValue;
 
-        public bool bChangeValue;
-        public bool bNewValue;
+        public bool bChangeValue = true;
+        public bool bNewValue = true;
 
         public UnityEvent eventOnTriggerEnter;
         public UnityEvent eventOnTriggerExit;
@@ -34,22 +34,30 @@ namespace DonkeyWork {
         }
 
         void OnTriggerEnter(Collider c) {
-            if (bExpectedValue && Manager.IsRuleEnabled(strDetKey)) {
-                if (c.transform.tag == strTagToCheck) {
-                    eventOnTriggerEnter.Invoke();
-                    Debug.Log("colidio");
+            if (bExpectedValue) {
+                if (Manager.IsRuleEnabled(strDetKey) && bExpectedValue) {
+                    if (c.transform.tag == strTagToCheck) {
+                        eventOnTriggerEnter.Invoke();
+                        Debug.Log("colidio");
 
-                    if (bChangeValue) {
-                        Manager.ChangeRuleValue(strDetKey, bNewValue);
+                        if (bChangeValue) {
+                            Manager.ChangeRuleValue(strDetKey, bNewValue);
+                        }
                     }
+                }else {
+                    Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
                 }
             }
         }
 
         void OnTriggerExit(Collider c) {
-            if (bExpectedValue && Manager.IsRuleEnabled(strDetKey)) {
-                if (c.transform.tag == strTagToCheck) {
-                    eventOnTriggerExit.Invoke();
+            if (bExpectedValue) {
+                if (Manager.IsRuleEnabled(strDetKey)) {
+                    if (c.transform.tag == strTagToCheck) {
+                        eventOnTriggerExit.Invoke();
+                    }
+                } else {
+                    Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
                 }
             }
         }

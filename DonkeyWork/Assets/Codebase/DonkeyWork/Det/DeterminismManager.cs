@@ -11,9 +11,21 @@ namespace DonkeyWork {
         public static DeterminismManager Instance { get; private set; }
 
         public DeterminismRules rulesAsset;
+        public bool bIsFirstScene;
 
         public DeterminismManager() {
             Instance = this;
+        }
+
+        public void Start() {
+            if (!bIsFirstScene) {
+                return;
+            }
+
+            for (int i = 0; i < rulesAsset.rules.Count; i++) {
+                DeterministicRule rule = rulesAsset.rules[i];
+                rule.Value = rule.StartValue;
+            }
         }
 
         public bool IsRuleEnabled(string key) {
@@ -21,6 +33,7 @@ namespace DonkeyWork {
         }
 
         public void ChangeRuleValue(string strKey, bool bNewValue) {
+            Debug.Log($"Changed rule {strKey} to {bNewValue}");
             rulesAsset.rules.First(c => c.Name.Equals(strKey)).Value = bNewValue;
         }
     }
