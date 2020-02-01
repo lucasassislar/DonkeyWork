@@ -60,7 +60,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.22
+  m_Height: 4.58
   m_Radius: 1.32
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -86,6 +86,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &496071737
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218340971584750455}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2804006945895174695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,11 +174,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 23.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec1af4f616ae71428fa7763b6ec4341, type: 3}
 --- !u!4 &2657046615504625604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 159434304303255011, guid: fec1af4f616ae71428fa7763b6ec4341,
+    type: 3}
+  m_PrefabInstance: {fileID: 2804006945895174695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8218340971584750455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6117221882045813072, guid: fec1af4f616ae71428fa7763b6ec4341,
     type: 3}
   m_PrefabInstance: {fileID: 2804006945895174695}
   m_PrefabAsset: {fileID: 0}
