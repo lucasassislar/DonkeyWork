@@ -42,11 +42,13 @@ namespace DonkeyWork {
             float fXMovement = 0;
             if (keyboard.leftArrowKey.isPressed ||
                 keyboard.aKey.isPressed) {
-                fXMovement = -1;
+                fXMovement -= 1;
                 transform.localScale = new Vector3(-1, 1, 1);
-            } else if (keyboard.rightArrowKey.isPressed ||
-              keyboard.dKey.isPressed) {
-                fXMovement = 1;
+            }
+
+            if (keyboard.rightArrowKey.isPressed ||
+                keyboard.dKey.isPressed) {
+                fXMovement += 1;
                 transform.localScale = new Vector3(1, 1, 1);
             }
 
