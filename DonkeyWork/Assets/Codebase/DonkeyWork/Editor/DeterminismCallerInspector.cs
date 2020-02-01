@@ -29,7 +29,7 @@ namespace DonkeyWork {
                 }
 
                 string[] keys = (from rule in caller.Manager.rulesAsset.rules
-                                    select rule.Name).ToArray();
+                                 select rule.Name).ToArray();
 
                 int selectedIndex = -1;
                 if (!string.IsNullOrEmpty(caller.strDetKey)) {

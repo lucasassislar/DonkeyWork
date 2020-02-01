@@ -15,6 +15,8 @@ namespace DonkeyWork {
         [NonSerialized]
         public List<DeterministicRule> rules;
 
+        public bool bLoaded { get; private set; }
+
 #if UNITY_EDITOR
         [MenuItem("Assets/Create/Determinism Rules File")]
         public static void CreateAsset() {
@@ -48,6 +50,7 @@ namespace DonkeyWork {
                 return;
             }
 
+            bLoaded = true;
             using (MemoryStream stream = new MemoryStream(serialized)) {
                 using (BinaryReader reader = new BinaryReader(stream)) {
                     int ruleCount = reader.ReadInt32();
