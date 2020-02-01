@@ -338,6 +338,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 34.6, y: -30, z: 0}
+--- !u!114 &821857509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2804006946110307409, guid: 0813227ded980b04d9feb5b02f19e0f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1765912815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57cdfe89f10b0c4386f93a97b87cfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1002811184
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b258fa6f2f5b24eb6815cb5a819d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  playerController: {fileID: 821857509}
   fCameraSpeed: 6
 --- !u!81 &1002811186
 AudioListener:
@@ -467,57 +479,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1468865409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7595316062571371606, guid: 61e64fde2e8ec714eb20c21d4f8a9756,
-    type: 3}
-  m_PrefabInstance: {fileID: 7858050447819169372}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1468865411
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468865409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1468865412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468865409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf28ab1ced3c2ca4a9d56cdf9479220e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strDetKey: Office
-  strTagToCheck: Player
-  bExpectedValue: 0
-  bChangeValue: 1
-  bNewValue: 1
-  eventOnTriggerEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  eventOnTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  eventOnAwake:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1596220285
 GameObject:
   m_ObjectHideFlags: 0
