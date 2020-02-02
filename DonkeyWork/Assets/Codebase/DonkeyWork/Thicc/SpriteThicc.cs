@@ -42,6 +42,40 @@ namespace DonkeyWork {
             }
         }
 
+        public void ListColors() {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+            Sprite sprite = spriteRenderer.sprite;
+            Texture2D texture = sprite.texture;
+            Color32[] pixels = texture.GetPixels32();
+
+            Rect rect = sprite.rect;
+            int startX = (int)rect.x;
+            int startY = (int)rect.y;
+            int endX = (int)(rect.width + rect.x);
+            int endY = (int)(rect.height + rect.y);
+            List<Color32> uniqueColors = new List<Color32>();
+
+            for (int x = (int)rect.x; x < endX; x++) {
+                for (int y = (int)rect.y; y < endY; y++) {
+                    int index = x + (y * texture.width);
+                    Color32 color = pixels[index];
+
+                    if (color.a < 0.1f) {
+                        continue;
+                    }
+
+                    int actualX = x - startX;
+                    int actualY = y - startY;
+
+                    if (!uniqueColors.Contains(color)) {
+                        uniqueColors.Add(color);
+                        Debug.Log($"Unique color: {color}");
+                    }
+                }
+            }
+        }
+
         public bool ColorClose(Color32 a, Color32 b) {
             int difR = Math.Abs(a.r - b.r);
             int difG = Math.Abs(a.g - b.g);

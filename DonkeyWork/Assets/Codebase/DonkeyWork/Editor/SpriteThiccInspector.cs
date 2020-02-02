@@ -17,6 +17,10 @@ namespace DonkeyWork {
                     thicc.GenerateMesh();
                 }
 
+                if (GUILayout.Button("List Colors")) {
+                    thicc.ListColors();
+                }
+
                 if (GUILayout.Button("Delete Mesh")) {
                     thicc.DeleteMesh();
                 }
