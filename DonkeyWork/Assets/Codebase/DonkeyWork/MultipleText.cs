@@ -19,7 +19,7 @@ namespace DonkeyWork {
         private void Awake() {
             manager = DeterminismManager.Instance;
 
-            switch (manager.nCurrentDay) {
+            switch (manager.rulesAsset.nCurrentDay) {
                 case 1:
                     text.text = strDay1;
                     break;
