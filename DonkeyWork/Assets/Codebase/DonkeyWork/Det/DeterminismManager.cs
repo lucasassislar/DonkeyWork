@@ -33,6 +33,8 @@ namespace DonkeyWork {
 
             rulesAsset.Load();
 
+            rulesAsset.nCurrentDay = 1;
+
             for (int i = 0; i < rulesAsset.rules.Count; i++) {
                 DeterministicRule rule = rulesAsset.rules[i];
                 rule.Value = rule.StartValue;
