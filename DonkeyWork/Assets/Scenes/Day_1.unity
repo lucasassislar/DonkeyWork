@@ -2027,7 +2027,8 @@ GameObject:
   - component: {fileID: 498589583}
   - component: {fileID: 498589582}
   - component: {fileID: 498589581}
-  m_Layer: 0
+  - component: {fileID: 498589585}
+  m_Layer: 10
   m_Name: Camera_Cutscene
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2113,6 +2114,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498589585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498589580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1002811188}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &506414637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3128,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PostFX
       objectReference: {fileID: 0}
+    - target: {fileID: 9161729271172456458, guid: 59cec18a5bcfe064e8b96391be5c7f4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9161729271172456457, guid: 59cec18a5bcfe064e8b96391be5c7f4f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3125,8 +3191,14 @@ PrefabInstance:
     - target: {fileID: 9161729271172456456, guid: 59cec18a5bcfe064e8b96391be5c7f4f,
         type: 3}
       propertyPath: isGlobal
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9161729271172456456, guid: 59cec18a5bcfe064e8b96391be5c7f4f,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 65c067db35add53468e41d6f22e424e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cec18a5bcfe064e8b96391be5c7f4f, type: 3}
 --- !u!1001 &904094424
@@ -3695,7 +3767,6 @@ GameObject:
   - component: {fileID: 1002811187}
   - component: {fileID: 1002811186}
   - component: {fileID: 1002811185}
-  - component: {fileID: 1002811190}
   - component: {fileID: 1002811189}
   m_Layer: 10
   m_Name: MainCamera
@@ -3792,27 +3863,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1002811184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b258fa6f2f5b24eb6815cb5a819d70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  fCameraSpeed: 6
---- !u!114 &1002811190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002811184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 0}
+  volumeTrigger: {fileID: 1002811188}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -3850,7 +3907,7 @@ MonoBehaviour:
       motionGridSize: 64
       colorBlindnessType: 0
       colorBlindnessStrength: 1
-  m_Resources: {fileID: 0}
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 0
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
