@@ -73,7 +73,8 @@ namespace DonkeyWork {
 
                     if (!uniqueColors.Contains(color)) {
                         uniqueColors.Add(color);
-                        Debug.Log($"Unique color: {color}");
+                        string html = ColorUtility.ToHtmlStringRGB(color);
+                        Debug.Log($"Unique color: {color} - {html}");
                     }
                 }
             }
