@@ -25,15 +25,36 @@ namespace DonkeyWork {
         public UnityEvent eventOnTriggerEnter;
         public UnityEvent eventOnTriggerExit;
         public UnityEvent eventOnAwake;
+
         public float timeToCallBoss = 2f;
+
         private PlayableDirector BossComeTimeLine;
+
         private void Start() {
             Manager = DeterminismManager.Instance;
             BossComeTimeLine = GetComponent<PlayableDirector>();
         }
 
+        private bool IsCorrectDay() {
+            if (nDay == -2) {
+                // yesterdayyyyyy
+                int nToday = Manager.CurrentDay;
+                if (nToday != Manager.RuleChangeDay(strDetKey) + 1) {
+                    return false;
+                }
+            }
+            else if (nDay != -1 && !Manager.IsToday(nDay)) {
+                return false;
+            }
+            return true;
+        }
+
         private void Awake() {
-            if (bExpectedValue && Manager.IsRuleEnabled(strDetKey)) {
+            if (bExpectedValue == Manager.IsRuleEnabled(strDetKey)) {
+                if (!IsCorrectDay()) {
+                    return;
+                }
+
                 eventOnAwake.Invoke();
             }
         }
@@ -44,13 +65,17 @@ namespace DonkeyWork {
             }
 
             if (Manager.IsRuleEnabled(strDetKey) == bExpectedValue) {
+                if (!IsCorrectDay()) {
+                    return;
+                }
+
                 eventOnTriggerEnter.Invoke();
                 Debug.Log("colidio trigger enter");
 
                 if (bChangeValue) {
                     Manager.ChangeRuleValue(strDetKey, bNewValue);
                     Debug.Log("change rule value");
-                    Invoke("BossComeToTellPlayerOff",timeToCallBoss);
+                    Invoke("BossComeToTellPlayerOff", timeToCallBoss);
                 }
             } else {
                 Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
@@ -63,15 +88,19 @@ namespace DonkeyWork {
             }
 
             if (Manager.IsRuleEnabled(strDetKey) == bExpectedValue) {
+                if (!IsCorrectDay()) {
+                    return;
+                }
+
                 eventOnTriggerExit.Invoke();
             } else {
                 Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");
             }
         }
-        void BossComeToTellPlayerOff()
-        {
+
+        void BossComeToTellPlayerOff() {
             Debug.Log("called Timeline");
-           if(BossComeTimeLine) BossComeTimeLine.Play();
+            if (BossComeTimeLine) BossComeTimeLine.Play();
         }
     }
 }

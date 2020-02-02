@@ -3,13 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.InputSystem;
+using DonkeyWork;
+
 public class DayleMeeting : MonoBehaviour
 {
+   
     public PlayableDirector birdsTalkingTimeline;
+    public PlayableDirector birdsTalkingOtherDaysTimeline;
+
     public PlayableDirector birdsReactTimeline;
     public PlayableDirector birdsLeaveTimeline;
-    public bool day1;
 
+    private bool waitForPlayerAnswer;
+    private bool BirdsLeaving;
+ 
+    public void StartMeeting()
+    {
+        if (DeterminismManager.Instance.rulesAsset.nCurrentDay == 1)
+        {
+            birdsTalkingTimeline.Play();
+        }
+        else
+        {
+            birdsTalkingOtherDaysTimeline.Play();
+        }
+      
+    }
     void Update()
     {
 
@@ -18,20 +37,20 @@ public class DayleMeeting : MonoBehaviour
         {
             return;
         }
-        if (day1)
+
+        if (waitForPlayerAnswer && (keyboard.xKey.isPressed || keyboard.yKey.isPressed || keyboard.zKey.isPressed))
         {
-            birdsLeaveTimeline.Play();
+            birdsReactTimeline.Play();
         }
-        else
-        {
-           if (keyboard.xKey.isPressed ||
-              keyboard.yKey.isPressed ||
-              keyboard.zKey.isPressed)
-            {
-                birdsReactTimeline.Play();
-            }
-        }
-       
 
     }
+    public void BirdsLeave()
+    {
+        birdsLeaveTimeline.Play();
+    }
+    public void PlayerAnswer()
+    {
+        waitForPlayerAnswer = true;
+    }
+    
 }

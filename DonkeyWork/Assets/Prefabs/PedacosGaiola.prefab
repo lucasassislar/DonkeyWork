@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1881446885173552195}
   - component: {fileID: 2334135008032769756}
   - component: {fileID: 2479766023114382822}
-  m_Layer: 0
-  m_Name: ObjectQuebravel
+  m_Layer: 8
+  m_Name: PedacosGaiola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

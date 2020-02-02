@@ -10,6 +10,7 @@ namespace DonkeyWork {
         public string strName = "Animation";
         public int nStartFrame = 0;
         public int nEndFrame = 5;
+        public int nSheetLine = 0;
         public float fAnimationFPS = 12;
     }
 }

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 988909849127321817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.56159, y: 11.56159, z: 11.56159}
+  m_LocalScale: {x: 17, y: 17, z: 17}
   m_Children:
   - {fileID: 225680856314887606}
   - {fileID: 2746562947279529081}
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fThiccness: 0.5
+  fOffsetZ: 0
+  customColors: []
   matReference: {fileID: 2100000, guid: 8699c918262f88543a14872cb3629c6f, type: 2}
 --- !u!114 &975067937211767251
 MonoBehaviour:
@@ -61,6 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fThiccness: 0.5
+  fOffsetZ: 0
+  customColors: []
   matReference: {fileID: 2100000, guid: 8699c918262f88543a14872cb3629c6f, type: 2}
 --- !u!1 &3073757880007417016
 GameObject:
@@ -152,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fThiccness: 0.5
+  fOffsetZ: 0
+  customColors: []
   matReference: {fileID: 2100000, guid: 8699c918262f88543a14872cb3629c6f, type: 2}
 --- !u!1 &4476036559374936497
 GameObject:
@@ -243,6 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fThiccness: 0.5
+  fOffsetZ: 0
+  customColors: []
   matReference: {fileID: 2100000, guid: 8699c918262f88543a14872cb3629c6f, type: 2}
 --- !u!1 &6348884830661667122
 GameObject:
@@ -409,6 +417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PedacosGaiola
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994260502871476790, guid: bf3f24187a140a14187294e3aa714904,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 655059382911386946, guid: bf3f24187a140a14187294e3aa714904,
         type: 3}

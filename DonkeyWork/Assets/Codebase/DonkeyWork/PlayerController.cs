@@ -52,37 +52,48 @@ namespace DonkeyWork {
             }
 
             float fXMovement = 0;
+
+            bool bFnGoingRight = false;
+            bool bChangedDir = false;
+
             if (keyboard.leftArrowKey.isPressed ||
                 keyboard.aKey.isPressed) {
                 fXMovement -= 1;
 
-                if (bGoingRight) {
-                    fSpinTimer = 0;
-                    vSpinStartAngle = trBody.localRotation.eulerAngles;
+                if (bGoingRight && fSpinTimer > fSpinTime) {
+                    bChangedDir = true;
                 }
-                fSpinTimer += Time.deltaTime;
-                trBody.localRotation = Quaternion.Euler(Vector3.Lerp(vSpinStartAngle, new Vector3(0, 180, 0), Math.Min(1, curveRotation.Evaluate(fSpinTimer / fSpinTime))));
-                bGoingRight = false;
-
+                bFnGoingRight = false;
             }
-
             if (keyboard.rightArrowKey.isPressed ||
                 keyboard.dKey.isPressed) {
                 fXMovement += 1;
 
-                if (!bGoingRight) {
+                if (!bGoingRight && fSpinTimer > fSpinTime) {
+                    bChangedDir = true;
+                }
+                bFnGoingRight = true;
+            }
+
+            fSpinTimer += Time.deltaTime;
+            if (fXMovement != 0) {
+                if (bChangedDir) {
                     fSpinTimer = 0;
                     vSpinStartAngle = trBody.localRotation.eulerAngles;
                 }
-                fSpinTimer += Time.deltaTime;
+                bGoingRight = bFnGoingRight;
+            }
+
+            if (bGoingRight) {
                 trBody.localRotation = Quaternion.Euler(Vector3.Lerp(vSpinStartAngle, new Vector3(0, 0, 0), Math.Min(1, curveRotation.Evaluate(fSpinTimer / fSpinTime))));
-                bGoingRight = true;
+            } else {
+                trBody.localRotation = Quaternion.Euler(Vector3.Lerp(vSpinStartAngle, new Vector3(0, 180, 0), Math.Min(1, curveRotation.Evaluate(fSpinTimer / fSpinTime))));
             }
 
             bool bWaitFinish = spriteAnimation.CurrentAnimation == "Kicking";
             if (fXMovement > 0.1f || fXMovement < -0.1f) {
                 spriteAnimation.Play("Walking", bWaitFinish);
-            }else {
+            } else {
                 spriteAnimation.Play("Idle", bWaitFinish);
             }
 

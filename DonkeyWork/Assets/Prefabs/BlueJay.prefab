@@ -26,10 +26,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8660249996457186994, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc09c9793f8a3e7409e393899032686d, type: 2}
+    - target: {fileID: 6600316884657273955, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: animations.Array.data[0].nSheetLine
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600316884657273955, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: matSprite
+      value: 
+      objectReference: {fileID: 2100000, guid: fc09c9793f8a3e7409e393899032686d, type: 2}
     - target: {fileID: 148476085589821339, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
         type: 3}
       propertyPath: m_Name
       value: BlueJay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165542586932679622, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 148476085589821342, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
         type: 3}
@@ -111,11 +131,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 215bcf865e31c084cbb17fe0b1c57d7a, type: 2}
-    - target: {fileID: 7165542586932679622, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7965995710170436812, guid: 289f83f6e8550df4d9ecb1e20506f5fd,
         type: 3}
       propertyPath: m_LocalPosition.y

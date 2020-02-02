@@ -17,6 +17,10 @@ namespace DonkeyWork {
                     thicc.GenerateMesh();
                 }
 
+                if (GUILayout.Button("Generate Sprite-Sheet")) {
+                    thicc.GenerateSpriteSheet();
+                }
+
                 if (GUILayout.Button("List Colors")) {
                     thicc.ListColors();
                 }
