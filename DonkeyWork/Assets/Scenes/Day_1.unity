@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -725,6 +725,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1037945245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1583734927350265649, guid: 61e64fde2e8ec714eb20c21d4f8a9756,
+    type: 3}
+  m_PrefabInstance: {fileID: 7858050447819169372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1037945246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037945245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf28ab1ced3c2ca4a9d56cdf9479220e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strDetKey: 
+  strTagToCheck: PlayerAttack
+  nDay: 1
+  bExpectedValue: 0
+  bChangeValue: 1
+  bNewValue: 1
+  eventOnTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  eventOnTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  eventOnAwake:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  timeToCallBoss: 2
 --- !u!1001 &1083498174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1139,6 +1179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals: []
+    m_Events: []
 --- !u!1001 &3404556722900828876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1451,6 +1494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026473919676323740, guid: 61e64fde2e8ec714eb20c21d4f8a9756,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e64fde2e8ec714eb20c21d4f8a9756, type: 3}
