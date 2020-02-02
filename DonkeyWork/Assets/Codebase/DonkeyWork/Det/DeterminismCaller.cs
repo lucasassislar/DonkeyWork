@@ -25,8 +25,11 @@ namespace DonkeyWork {
         public UnityEvent eventOnTriggerEnter;
         public UnityEvent eventOnTriggerExit;
         public UnityEvent eventOnAwake;
+
         public float timeToCallBoss = 2f;
+
         private PlayableDirector BossComeTimeLine;
+
         private void Start() {
             Manager = DeterminismManager.Instance;
             BossComeTimeLine = GetComponent<PlayableDirector>();
@@ -44,6 +47,10 @@ namespace DonkeyWork {
             }
 
             if (Manager.IsRuleEnabled(strDetKey) == bExpectedValue) {
+                if (nDay != -1 && !Manager.IsToday(nDay)) {
+                    return;
+                }
+
                 eventOnTriggerEnter.Invoke();
                 Debug.Log("colidio trigger enter");
 
@@ -63,6 +70,10 @@ namespace DonkeyWork {
             }
 
             if (Manager.IsRuleEnabled(strDetKey) == bExpectedValue) {
+                if (nDay != -1 && !Manager.IsToday(nDay)) {
+                    return;
+                }
+
                 eventOnTriggerExit.Invoke();
             } else {
                 Debug.Log($"Did not execute {this.name} because {strDetKey} is not the expected value");

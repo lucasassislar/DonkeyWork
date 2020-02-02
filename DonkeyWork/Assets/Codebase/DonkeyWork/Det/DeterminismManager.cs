@@ -64,6 +64,10 @@ namespace DonkeyWork {
             return rulesAsset.rules.First(c => c.Name.Equals(key)).Value;
         }
 
+        public bool IsToday(int nDay) {
+            return rulesAsset.nCurrentDay == nDay;
+        }
+
         public void ChangeRuleValue(string strKey, bool bNewValue) {
             Debug.Log($"Changed rule {strKey} to {bNewValue}");
             rulesAsset.rules.First(c => c.Name.Equals(strKey)).Value = bNewValue;
