@@ -65,9 +65,6 @@ namespace DonkeyWork {
                         continue;
                     }
 
-                    int actualX = x - startX;
-                    int actualY = y - startY;
-
                     if (!uniqueColors.Contains(color)) {
                         uniqueColors.Add(color);
                         Debug.Log($"Unique color: {color}");
@@ -96,7 +93,6 @@ namespace DonkeyWork {
             Directory.CreateDirectory(folder);
 
             string matName = $"{folder}//Mat_{name}_{Guid.NewGuid()}.mat";
-            string meshName = $"{folder}//Mat_{name}_{Guid.NewGuid()}.asset";
 
             spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -126,11 +122,7 @@ namespace DonkeyWork {
             invScale.y = 1 / invScale.y;
             invScale.z = 1 / invScale.z;
 
-            GameObject childObj = new GameObject("MeshChild");
-            childObj.transform.parent = this.transform;
 
-            childObj.transform.localPosition = new Vector3(0, 0, fOffsetZ);
-            childObj.transform.localScale = Vector3.one;
             spriteRenderer.enabled = false;
 
             List<Color32> uniqueColors = new List<Color32>();
@@ -288,29 +280,46 @@ namespace DonkeyWork {
                     indices.Add(vertices.Count - 3);
                     indices.Add(vertices.Count - 1);
                     indices.Add(vertices.Count - 4);
+
+                    if (vertices.Count > 60000) {
+                        ConcateMesh(vertices, colors, indices);
+                        vertices.Clear();
+                        colors.Clear();
+                        indices.Clear();
+                    }
                 }
             }
+
+            if (vertices.Count > 0) {
+                ConcateMesh(vertices, colors, indices);
+            }
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
+        private void ConcateMesh(List<Vector3> vertices, List<Color32> colors, List<int> indices) {
+            string folder = $"Assets//Generated//";
+            string meshName = $"{folder}//Mat_{name}_{Guid.NewGuid()}.asset";
+
+            GameObject childObj = new GameObject("MeshChild");
+            childObj.transform.parent = this.transform;
+
+            childObj.transform.localPosition = new Vector3(0, 0, fOffsetZ);
+            childObj.transform.localScale = Vector3.one;
 
             meshFilter = childObj.AddComponent<MeshFilter>();
             meshRen = childObj.AddComponent<MeshRenderer>();
 
             Mesh mesh = new Mesh();
             mesh.vertices = vertices.ToArray();
-            mesh.triangles = indices.ToArray();
             mesh.colors32 = colors.ToArray();
+            mesh.SetIndices(indices.ToArray(), MeshTopology.Triangles, 0);
             mesh.RecalculateNormals();
 
             AssetDatabase.CreateAsset(mesh, meshName);
-
             meshFilter.mesh = mesh;
-
-            // save material on database
-            //AssetDatabase.CreateAsset(new Material(matReference), matName);
-            //meshRen.sharedMaterial = AssetDatabase.LoadAssetAtPath<Material>(matName);
             meshRen.sharedMaterial = matReference;
-
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
         }
     }
 }
