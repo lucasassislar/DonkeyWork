@@ -26,6 +26,11 @@ namespace DonkeyWork {
         }
 #endif
 
+        public DeterministicRule GetRuleByName(string strName) {
+            LoadIfNot();
+            return rules.First(c => c.Name.Equals(strName));
+        }
+
         public void Save() {
             using (MemoryStream stream = new MemoryStream()) {
                 using (BinaryWriter writer = new BinaryWriter(stream)) {
