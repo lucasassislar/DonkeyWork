@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 9cacb8accfa79e94aafcfbe998486b18
+guid: 6a4fdc391323aa54ab04b58abd1fb2e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7824342495087436786
-    second: Gaiola-Sheet_0
+      213: -6992210929330459540
+    second: passarinhos_0
   - first:
-      213: -4822372516559047933
-    second: Gaiola-Sheet_1
+      213: 1170086453037641663
+    second: passarinhos_1
   - first:
-      213: -1779572522790044833
-    second: table
+      213: -1813476823743726143
+    second: passarinhos_2
   - first:
-      213: -7725157294045167926
-    second: pc
-  - first:
-      213: -8751760612684808662
-    second: Gaiola-Sheet_2
+      213: -996262830065193939
+    second: passarinhos_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -35,7 +32,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
@@ -99,97 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gaiola-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49f24c7d5fe836f43bb33dea156fcc69
-      internalID: -7824342495087436786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gaiola-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5aaad781020a6d4b99d36946292a1ea
-      internalID: -4822372516559047933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 12
-        width: 19
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82878644fbb8c064f8fa76e30a26a883
-      internalID: -1779572522790044833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pc
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 21
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60e7f78f9412fa0458eeacafbac62542
-      internalID: -7725157294045167926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gaiola-Sheet_2
+      name: passarinhos_0
       rect:
         serializedVersion: 2
         x: 18
-        y: 21
-        width: 10
-        height: 19
+        y: 61
+        width: 11
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,8 +110,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7125cdb62c3898345b14af221cee93ff
-      internalID: -8751760612684808662
+      spriteID: dd7c59485046f854a9398a9da24738b9
+      internalID: -6992210929330459540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: passarinhos_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 61
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcc5509e18f23e48b668eda4997a096
+      internalID: 1170086453037641663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: passarinhos_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 11
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f65545693e4c43449736617e6a0a41b
+      internalID: -1813476823743726143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: passarinhos_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 11
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a267551cd3549124d970191c924cbeff
+      internalID: -996262830065193939
       vertices: []
       indices: 
       edges: []
@@ -206,7 +182,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 39fa45d8d38197943afae23a2a5e273d
+    spriteID: b452af7fa9f150143bfbee136a4bf603
     internalID: 0
     vertices: []
     indices: 

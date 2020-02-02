@@ -6,7 +6,6 @@ using UnityEngine.Events;
 namespace DonkeyWork {
     public class DialogueTrigger : MonoBehaviour {
         public UnityEvent Activatedialogue;
-
         public UnityEvent Deactivatedialogue;
 
         public string tagToCheck = "Player";
@@ -25,5 +24,14 @@ namespace DonkeyWork {
                 Deactivatedialogue.Invoke();
             }
         }
+        public void ActivateDialogueFromTimeline()
+        {
+            Activatedialogue.Invoke();
+        }
+        public void DeactivateDialogueFromTimeline()
+        {
+            Deactivatedialogue.Invoke();
+        }
+
     }
 }

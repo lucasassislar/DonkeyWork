@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fMovementSpeed: 10
+  fLockZ: -3
   fGravity: -10
   fMinVelocityY: -100
 --- !u!143 &2804006946110307410
@@ -89,12 +90,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 4.35
-  m_Radius: 1.32
+  m_Radius: 0.33
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.36, z: 0}
+  m_Center: {x: 0, y: 0.36, z: 2.16}
 --- !u!95 &8371087979979266224
 Animator:
   serializedVersion: 3
@@ -202,6 +203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 5.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 175524215141669538, guid: fec1af4f616ae71428fa7763b6ec4341,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7444472214189208040, guid: fec1af4f616ae71428fa7763b6ec4341,
         type: 3}
