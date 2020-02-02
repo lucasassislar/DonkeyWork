@@ -20,6 +20,10 @@ namespace DonkeyWork {
             vOffsetPos = transform.position - playerController.transform.position;
         }
 
+        private void Awake() {
+            LateUpdate();
+        }
+
         private void LateUpdate() {
             Vector3 vTargetPos = playerController.transform.position + this.vOffsetPos;
             transform.position = Vector3.Lerp(transform.position, vTargetPos, fCameraSpeed * Time.deltaTime);
