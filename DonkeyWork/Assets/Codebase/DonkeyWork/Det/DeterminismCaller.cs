@@ -30,6 +30,10 @@ namespace DonkeyWork {
 
         private PlayableDirector BossComeTimeLine;
 
+        public void LoadManager() {
+            Manager = DeterminismManager.Instance;
+        }
+
         private void Start() {
             Manager = DeterminismManager.Instance;
             BossComeTimeLine = GetComponent<PlayableDirector>();

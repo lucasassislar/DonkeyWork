@@ -25,6 +25,10 @@ namespace DonkeyWork {
             if (this.targets != null && this.targets.Length <= 1) {
                 DeterminismCaller caller = (DeterminismCaller)target;
 
+                if (caller.Manager == null) {
+                    caller.LoadManager();
+                }
+
                 if (caller.Manager.rulesAsset == null) {
                     return;
                 }
