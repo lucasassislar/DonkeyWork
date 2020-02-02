@@ -10,6 +10,9 @@ namespace DonkeyWork {
         private CharacterController playerController;
         private Animator animator;
 
+        [Header("Animation")]
+        public AnimationCurve curveRotation = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
         [Header("Movement")]
         public float fMovementSpeed = 5;
         public float fLockZ = -3;
@@ -47,13 +50,13 @@ namespace DonkeyWork {
             if (keyboard.leftArrowKey.isPressed ||
                 keyboard.aKey.isPressed) {
                 fXMovement -= 1;
-                transform.localScale = new Vector3(-1, 1, 1);
+                //transform.localScale = new Vector3(-1, 1, 1);
             }
 
             if (keyboard.rightArrowKey.isPressed ||
                 keyboard.dKey.isPressed) {
                 fXMovement += 1;
-                transform.localScale = new Vector3(1, 1, 1);
+                //transform.localScale = new Vector3(1, 1, 1);
             }
 
             bool bWaitFinish = spriteAnimation.CurrentAnimation == "Kicking";

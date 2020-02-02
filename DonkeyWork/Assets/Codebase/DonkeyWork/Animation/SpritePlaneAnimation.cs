@@ -57,16 +57,15 @@ namespace DonkeyWork {
 
             if (fTimer > fTimeBetwenFrames) {
                 fTimer -= fTimeBetwenFrames;
+
                 nCurrentFrame++;
                 if (nCurrentFrame > currentAnim.nEndFrame) {
-
                     if (string.IsNullOrEmpty(strQueuedAnimation)) {
                         nCurrentFrame = currentAnim.nStartFrame;
                     } else {
                         Play(strQueuedAnimation);
                         strQueuedAnimation = String.Empty;
                     }
-
                 }
 
                 UpdateMaterial();
