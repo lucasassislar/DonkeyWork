@@ -17,6 +17,8 @@ namespace DonkeyWork {
 
         public bool bLoaded { get; private set; }
 
+        public int nCurrentDay = 1;
+
 #if UNITY_EDITOR
         [MenuItem("Assets/Create/Determinism Rules File")]
         public static void CreateAsset() {
