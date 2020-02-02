@@ -123,7 +123,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  timeToCallBoss: 2
 --- !u!54 &5854406008109976444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -303,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 3565382019487519618, guid: e640e3af012672447874033a64faafbf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.79
       objectReference: {fileID: 0}
     - target: {fileID: 3565382019487519618, guid: e640e3af012672447874033a64faafbf,
         type: 3}
@@ -365,11 +364,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7858050448828669668}
     m_Modifications:
-    - target: {fileID: 783171304539326991, guid: 306f1e34e6d48f6409317727b2c88e7d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3832451874578499699, guid: 306f1e34e6d48f6409317727b2c88e7d,
         type: 3}
       propertyPath: m_Name
@@ -435,6 +429,11 @@ PrefabInstance:
       propertyPath: eventOnAwake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1190174929922078478, guid: 306f1e34e6d48f6409317727b2c88e7d,
+        type: 3}
+      propertyPath: eventOnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7072558831895640374}
     - target: {fileID: 1190174929922078478, guid: 306f1e34e6d48f6409317727b2c88e7d,
         type: 3}
       propertyPath: eventOnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -974,6 +973,12 @@ GameObject:
 --- !u!4 &7595316062571371601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3832451874578499700, guid: 306f1e34e6d48f6409317727b2c88e7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6649671618965181477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7072558831895640374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4498717599204011283, guid: 306f1e34e6d48f6409317727b2c88e7d,
     type: 3}
   m_PrefabInstance: {fileID: 6649671618965181477}
   m_PrefabAsset: {fileID: 0}
