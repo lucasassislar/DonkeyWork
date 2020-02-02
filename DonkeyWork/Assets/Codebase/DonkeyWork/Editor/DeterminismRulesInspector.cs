@@ -37,7 +37,7 @@ namespace DonkeyWork {
                 if (GUILayout.Button("Reset Day")) {
                     det.nCurrentDay = 1;
                 }
-                det.nCurrentDay = EditorGUILayout.IntField(det.nCurrentDay, "Current Day");
+                det.nCurrentDay = EditorGUILayout.IntField("Current Day", det.nCurrentDay);
 
                 if (GUILayout.Button("Add Rule")) {
                     det.rules.Add(new DeterministicRule());
