@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strDetKey: DayleMeeting
   strTagToCheck: Player
+  nDay: 1
   bExpectedValue: 0
   bChangeValue: 1
   bNewValue: 1
@@ -123,6 +124,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  timeToCallBoss: 2
 --- !u!54 &5854406008109976444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -297,12 +299,12 @@ PrefabInstance:
     - target: {fileID: 3565382019487519618, guid: e640e3af012672447874033a64faafbf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.07
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 3565382019487519618, guid: e640e3af012672447874033a64faafbf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3565382019487519618, guid: e640e3af012672447874033a64faafbf,
         type: 3}
@@ -364,6 +366,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7858050448828669668}
     m_Modifications:
+    - target: {fileID: 783171304539326991, guid: 306f1e34e6d48f6409317727b2c88e7d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3832451874578499699, guid: 306f1e34e6d48f6409317727b2c88e7d,
         type: 3}
       propertyPath: m_Name

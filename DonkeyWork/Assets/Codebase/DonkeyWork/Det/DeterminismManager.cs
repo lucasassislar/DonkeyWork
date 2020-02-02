@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace DonkeyWork {
     public class DeterminismManager : MonoBehaviour {
@@ -14,6 +15,12 @@ namespace DonkeyWork {
         public bool bIsFirstScene;
 
         public int nCurrentDay = 1;
+
+        public UnityEvent eventsDay1;
+        public UnityEvent eventsDay2;
+        public UnityEvent eventsDay3;
+        public UnityEvent eventsDay4;
+        public UnityEvent eventsDay5;
 
         public DeterminismManager() {
             Instance = this;
@@ -30,6 +37,29 @@ namespace DonkeyWork {
                 DeterministicRule rule = rulesAsset.rules[i];
                 rule.Value = rule.StartValue;
             }
+
+            switch (nCurrentDay) {
+                case 1:
+                    eventsDay1.Invoke();
+                    break;
+                case 2:
+                    eventsDay2.Invoke();
+                    break;
+                case 3:
+                    eventsDay3.Invoke();
+                    break;
+                case 4:
+                    eventsDay4.Invoke();
+                    break;
+                case 5:
+                    eventsDay5.Invoke();
+                    break;
+            }
+        }
+
+        public void SwapDay(int nDay) {
+            nCurrentDay = nDay;
+            SceneManager.LoadScene("Day_1");
         }
 
         public bool IsRuleEnabled(string key) {
