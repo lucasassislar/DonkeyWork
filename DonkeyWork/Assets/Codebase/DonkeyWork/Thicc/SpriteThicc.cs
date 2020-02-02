@@ -211,13 +211,13 @@ namespace DonkeyWork {
                     colors.Add(color);
                     colors.Add(color);
 
-                    indices.Add(vertices.Count - 2);
-                    indices.Add(vertices.Count - 3);
                     indices.Add(vertices.Count - 4);
-
                     indices.Add(vertices.Count - 3);
                     indices.Add(vertices.Count - 2);
+
                     indices.Add(vertices.Count - 1);
+                    indices.Add(vertices.Count - 2);
+                    indices.Add(vertices.Count - 3);
 
                     // left plane
                     vertices.Add(vCubeTopLeft);
