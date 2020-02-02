@@ -7,7 +7,7 @@ using DonkeyWork;
 
 public class DayleMeeting : MonoBehaviour
 {
-   
+    public PlayableDirector gameStartTimeline;
     public PlayableDirector birdsTalkingTimeline;
     public PlayableDirector birdsTalkingOtherDaysTimeline;
 
@@ -62,7 +62,12 @@ public class DayleMeeting : MonoBehaviour
     }
     public void Reset()
     {
+
         BirdsLeaving = false;
         waitForPlayerAnswer = false;
+    }
+    public void GaranteJogoComeca()
+    {
+        gameStartTimeline.Play();
     }
 }
