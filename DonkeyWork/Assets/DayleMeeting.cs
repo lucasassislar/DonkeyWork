@@ -42,15 +42,27 @@ public class DayleMeeting : MonoBehaviour
         {
             birdsReactTimeline.Play();
         }
+        if ((keyboard.escapeKey.isPressed ) && !BirdsLeaving)
+        {
+            birdsTalkingTimeline.Stop();
+            birdsTalkingOtherDaysTimeline.Stop();
 
+            BirdsLeave();
+           
+        }
     }
     public void BirdsLeave()
     {
+        BirdsLeaving = true;
         birdsLeaveTimeline.Play();
     }
     public void PlayerAnswer()
     {
         waitForPlayerAnswer = true;
     }
-    
+    public void Reset()
+    {
+        BirdsLeaving = false;
+        waitForPlayerAnswer = false;
+    }
 }

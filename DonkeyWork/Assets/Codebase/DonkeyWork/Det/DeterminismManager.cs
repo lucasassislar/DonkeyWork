@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,6 @@ namespace DonkeyWork {
         public static DeterminismManager Instance { get; private set; }
 
         public DeterminismRules rulesAsset;
-        public bool bIsFirstScene;
 
         public UnityEvent eventsDay1;
         public UnityEvent eventsDay2;
@@ -24,13 +24,28 @@ namespace DonkeyWork {
 
         public DeterminismManager() {
             Instance = this;
+#if UNITY_EDITOR
+            EditorApplication.playmodeStateChanged += ModeChanged;
+#endif
         }
 
+        static void ModeChanged() {
+#if UNITY_EDITOR
+            if (!EditorApplication.isPlayingOrWillChangePlaymode &&
+                 EditorApplication.isPlaying) {
+                // exit play mode
+                DeterminismManager.Instance.rulesAsset.ResetFirstDay();
+            }
+#endif
+        }
+
+
         public void Start() {
-            if (!bIsFirstScene) {
+            if (rulesAsset.LoadedFirstDay) {
                 return;
             }
 
+            rulesAsset.SetLoadFirstDay();
             rulesAsset.Load();
 
             for (int i = 0; i < rulesAsset.rules.Count; i++) {
@@ -41,6 +56,7 @@ namespace DonkeyWork {
             switch (rulesAsset.nCurrentDay) {
                 case 1:
                     eventsDay1.Invoke();
+                    Debug.Log("DAY 1_________________");
                     break;
                 case 2:
                     eventsDay2.Invoke();
@@ -61,15 +77,14 @@ namespace DonkeyWork {
             Debug.Log("SwapDAY_______-");
             rulesAsset.nCurrentDay = rulesAsset.nCurrentDay + 1;
             SceneManager.LoadScene("Day_1");
-            
         }
 
         public bool IsRuleEnabled(string key) {
-            return rulesAsset.rules.First(c => c.Name.Equals(key)).Value;
+            return rulesAsset.GetRuleByName(key).Value;
         }
 
         public int RuleChangeDay(string key) {
-            return rulesAsset.rules.First(c => c.Name.Equals(key)).DayEnabled;
+            return rulesAsset.GetRuleByName(key).DayEnabled;
         }
 
         public bool IsToday(int nDay) {
@@ -78,7 +93,7 @@ namespace DonkeyWork {
 
         public void ChangeRuleValue(string strKey, bool bNewValue) {
             Debug.Log($"Changed rule {strKey} to {bNewValue}");
-            DeterministicRule rule = rulesAsset.rules.First(c => c.Name.Equals(strKey));
+            DeterministicRule rule = rulesAsset.GetRuleByName(strKey);
             rule.Value = bNewValue;
             rule.DayEnabled = rulesAsset.nCurrentDay;
         }

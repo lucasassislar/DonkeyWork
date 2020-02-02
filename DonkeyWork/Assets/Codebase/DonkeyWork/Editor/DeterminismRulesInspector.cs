@@ -6,13 +6,11 @@ using UnityEngine;
 namespace DonkeyWork {
     [CustomEditor(typeof(DeterminismRules)), CanEditMultipleObjects]
     public class DeterminismRulesInspector : Editor {
-
         [MenuItem("Tools/Take screenshot")]
         static void Screenshot() {
             string[] files = Directory.GetFiles(@"Assets\Textures\Screenshots");
             ScreenCapture.CaptureScreenshot(@"Assets\Textures\Screenshots\screenshot_" + files.Length + ".png", 4);
         }
-
 
         public override void OnInspectorGUI() {
             //base.OnInspectorGUI();
@@ -35,6 +33,11 @@ namespace DonkeyWork {
                 if (GUILayout.Button("Load")) {
                     det.Load();
                 }
+
+                if (GUILayout.Button("Reset Day")) {
+                    det.nCurrentDay = 1;
+                }
+                det.nCurrentDay = EditorGUILayout.IntField("Current Day", det.nCurrentDay);
 
                 if (GUILayout.Button("Add Rule")) {
                     det.rules.Add(new DeterministicRule());

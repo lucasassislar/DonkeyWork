@@ -18,6 +18,7 @@ namespace DonkeyWork {
         public bool bLoaded { get; private set; }
 
         public int nCurrentDay = 1;
+        public bool LoadedFirstDay { get; private set; }
 
 #if UNITY_EDITOR
         [MenuItem("Assets/Create/Determinism Rules File")]
@@ -25,6 +26,19 @@ namespace DonkeyWork {
             ScriptableObjectUtility.CreateAsset<DeterminismRules>();
         }
 #endif
+
+        public void SetLoadFirstDay() {
+            LoadedFirstDay = true;
+        }
+
+        public void ResetFirstDay() {
+            LoadedFirstDay = false;
+        }
+
+        public DeterministicRule GetRuleByName(string strName) {
+            LoadIfNot();
+            return rules.First(c => c.Name.Equals(strName));
+        }
 
         public void Save() {
             using (MemoryStream stream = new MemoryStream()) {
