@@ -41,6 +41,7 @@ namespace DonkeyWork {
             switch (rulesAsset.nCurrentDay) {
                 case 1:
                     eventsDay1.Invoke();
+                    Debug.Log("DAY 1_________________");
                     break;
                 case 2:
                     eventsDay2.Invoke();

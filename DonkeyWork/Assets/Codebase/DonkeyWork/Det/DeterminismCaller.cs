@@ -50,6 +50,7 @@ namespace DonkeyWork {
         }
 
         private void Awake() {
+            Manager = DeterminismManager.Instance;
             if (bExpectedValue == Manager.IsRuleEnabled(strDetKey)) {
                 if (!IsCorrectDay()) {
                     return;
