@@ -70,7 +70,9 @@ namespace DonkeyWork {
 
         public void ChangeRuleValue(string strKey, bool bNewValue) {
             Debug.Log($"Changed rule {strKey} to {bNewValue}");
-            rulesAsset.rules.First(c => c.Name.Equals(strKey)).Value = bNewValue;
+            DeterministicRule rule = rulesAsset.rules.First(c => c.Name.Equals(strKey));
+            rule.Value = bNewValue;
+            rule.DayEnabled = rulesAsset.nCurrentDay;
         }
     }
 }
