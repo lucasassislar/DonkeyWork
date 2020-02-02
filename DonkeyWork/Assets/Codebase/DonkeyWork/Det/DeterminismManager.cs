@@ -56,8 +56,10 @@ namespace DonkeyWork {
         }
 
         public void SwapDay() {
+            Debug.Log("SwapDAY_______-");
             rulesAsset.nCurrentDay = rulesAsset.nCurrentDay + 1;
             SceneManager.LoadScene("Day_1");
+            
         }
 
         public bool IsRuleEnabled(string key) {
