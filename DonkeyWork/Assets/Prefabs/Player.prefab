@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2804006946110307409}
   - component: {fileID: 2804006946110307410}
   - component: {fileID: 8371087979979266224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   matSprite: {fileID: 2100000, guid: 2094dd5c5d82c3f4f873626eed47c736, type: 2}
   nSpriteSheetFrames: 13
   nSpriteLines: 0
+  bSpecialNewDebug: 0
 --- !u!114 &2804006946110307409
 MonoBehaviour:
   m_ObjectHideFlags: 0

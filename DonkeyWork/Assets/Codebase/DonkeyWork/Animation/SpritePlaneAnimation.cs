@@ -17,8 +17,6 @@ namespace DonkeyWork {
         public int nSpriteSheetFrames = 13;
         public int nSpriteLines = 0;
 
-        public bool bSpecialNewDebug = false;
-
         private int nCurrentFrame = 0;
         private float fTimer = 0;
         private float fTimeBetwenFrames;
@@ -109,22 +107,11 @@ namespace DonkeyWork {
             float fOffsetX = nCurrentFrame * fHorFrameSize;
             float fOffsetY = fVerFrameSize * (float)currentAnim.nSheetLine;
 
-            if (bSpecialNewDebug) {
-                matSprite.SetVector("_MainTex_ST", new Vector4(
-                    fHorFrameSize,
-                    fVerFrameSize,
-                    fOffsetX,
-                    0));
-            }else {
-                if (matSprite.name.ToLower().Contains("blue")) {
-                    Debug.Log($"awduhwa {this.name}");
-                }
-                matSprite.SetVector("_MainTex_ST", new Vector4(
-                    fHorFrameSize,
-                    fVerFrameSize,
-                    fOffsetX,
-                    fOffsetY));
-            }
+            matSprite.SetVector("_MainTex_ST", new Vector4(
+                fHorFrameSize,
+                fVerFrameSize,
+                fOffsetX,
+                fOffsetY));
         }
     }
 }
