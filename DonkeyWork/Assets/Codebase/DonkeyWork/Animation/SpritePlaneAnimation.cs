@@ -10,6 +10,7 @@ namespace DonkeyWork {
         public string CurrentAnimation { get { return currentAnim.strName; } }
 
         public List<SpriteAnimation> animations;
+        public Transform trFrameParent;
 
         public Material matSprite;
 
@@ -21,11 +22,22 @@ namespace DonkeyWork {
         private SpriteAnimation currentAnim;
         private string strQueuedAnimation;
         private float fFrameSize;
+        private List<MeshRenderer> meshFrames;
 
         private void Start() {
             if (animations != null && animations.Count > 0) {
                 currentAnim = animations[0];
                 Play(currentAnim);
+            }
+
+            if (trFrameParent) {
+                meshFrames = new List<MeshRenderer>();
+                foreach (Transform tr in trFrameParent) {
+                    MeshRenderer meshRen = tr.GetComponent<MeshRenderer>();
+                    meshFrames.Add(meshRen);
+
+                    tr.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -65,6 +77,20 @@ namespace DonkeyWork {
                     } else {
                         Play(strQueuedAnimation);
                         strQueuedAnimation = String.Empty;
+                    }
+
+                    if (meshFrames != null) {
+                        for (int i = 0; i < meshFrames.Count; i++) {
+                            meshFrames[i].gameObject.SetActive(false);
+                        }
+                        meshFrames[nCurrentFrame].gameObject.SetActive(true);
+                    }
+                } else {
+                    if (meshFrames != null) {
+                        for (int i = 0; i < meshFrames.Count; i++) {
+                            meshFrames[i].gameObject.SetActive(false);
+                        }
+                        meshFrames[nCurrentFrame].gameObject.SetActive(true);
                     }
                 }
 
