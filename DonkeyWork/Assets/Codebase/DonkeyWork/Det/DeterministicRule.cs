@@ -11,9 +11,12 @@ namespace DonkeyWork {
         public string Name;
         public bool StartValue;
         public string Description;
+
         
         [HideInInspector]
         public bool Value;
+        public int DayEnabled;
+
 
         [HideInInspector]
         public bool IsEditorOpen;
