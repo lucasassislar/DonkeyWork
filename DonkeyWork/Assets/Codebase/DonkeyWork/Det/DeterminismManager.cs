@@ -13,6 +13,8 @@ namespace DonkeyWork {
         public DeterminismRules rulesAsset;
         public bool bIsFirstScene;
 
+        public int nCurrentDay = 1;
+
         public DeterminismManager() {
             Instance = this;
         }

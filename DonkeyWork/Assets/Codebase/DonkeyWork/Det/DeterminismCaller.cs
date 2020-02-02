@@ -15,6 +15,7 @@ namespace DonkeyWork {
 
         public string strDetKey;
         public string strTagToCheck = "PlayerAttack";
+        public int nDay = 1;
 
         public bool bExpectedValue;
 

@@ -44,6 +44,8 @@ namespace DonkeyWork {
                 if (newIndex != selectedIndex) {
                     caller.strDetKey = keys[newIndex];
                 }
+
+                caller.nDay = EditorGUILayout.IntField("Day To Call", caller.nDay);
                 caller.timeToCallBoss = EditorGUILayout.FloatField("Time To Call Boss", caller.timeToCallBoss);
                 caller.strTagToCheck = EditorGUILayout.TextField("Tag To Check", caller.strTagToCheck);
                 caller.bExpectedValue = EditorGUILayout.Toggle("Expected Rule Value", caller.bExpectedValue);
