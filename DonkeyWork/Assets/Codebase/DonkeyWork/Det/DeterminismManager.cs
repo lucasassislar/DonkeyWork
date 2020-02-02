@@ -20,6 +20,8 @@ namespace DonkeyWork {
         public UnityEvent eventsDay4;
         public UnityEvent eventsDay5;
 
+        public int CurrentDay { get { return rulesAsset.nCurrentDay; } }
+
         public DeterminismManager() {
             Instance = this;
         }
@@ -39,6 +41,7 @@ namespace DonkeyWork {
             switch (rulesAsset.nCurrentDay) {
                 case 1:
                     eventsDay1.Invoke();
+                    Debug.Log("DAY 1_________________");
                     break;
                 case 2:
                     eventsDay2.Invoke();
@@ -66,13 +69,19 @@ namespace DonkeyWork {
             return rulesAsset.rules.First(c => c.Name.Equals(key)).Value;
         }
 
+        public int RuleChangeDay(string key) {
+            return rulesAsset.rules.First(c => c.Name.Equals(key)).DayEnabled;
+        }
+
         public bool IsToday(int nDay) {
             return rulesAsset.nCurrentDay == nDay;
         }
 
         public void ChangeRuleValue(string strKey, bool bNewValue) {
             Debug.Log($"Changed rule {strKey} to {bNewValue}");
-            rulesAsset.rules.First(c => c.Name.Equals(strKey)).Value = bNewValue;
+            DeterministicRule rule = rulesAsset.rules.First(c => c.Name.Equals(strKey));
+            rule.Value = bNewValue;
+            rule.DayEnabled = rulesAsset.nCurrentDay;
         }
     }
 }
