@@ -34,7 +34,7 @@ namespace DonkeyWork {
             if (!EditorApplication.isPlayingOrWillChangePlaymode &&
                  EditorApplication.isPlaying) {
                 // exit play mode
-                DeterminismManager.Instance?.rulesAsset.ResetFirstDay();
+                DeterminismManager.Instance.rulesAsset.ResetFirstDay();
             }
 #endif
         }
