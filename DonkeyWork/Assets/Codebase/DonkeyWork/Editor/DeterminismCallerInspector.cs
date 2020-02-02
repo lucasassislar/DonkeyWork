@@ -9,6 +9,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
 using UnityEngine.UIElements;
 
 namespace DonkeyWork {
@@ -44,6 +45,8 @@ namespace DonkeyWork {
                     caller.strDetKey = keys[newIndex];
                 }
 
+                caller.nDay = EditorGUILayout.IntField("Day To Call", caller.nDay);
+                caller.timeToCallBoss = EditorGUILayout.FloatField("Time To Call Boss", caller.timeToCallBoss);
                 caller.strTagToCheck = EditorGUILayout.TextField("Tag To Check", caller.strTagToCheck);
                 caller.bExpectedValue = EditorGUILayout.Toggle("Expected Rule Value", caller.bExpectedValue);
                 caller.bChangeValue = EditorGUILayout.Toggle("Trigger Enter change rule value", caller.bChangeValue);
@@ -60,5 +63,7 @@ namespace DonkeyWork {
                 //EditorUtility.SetDirty(caller);
             }
         }
+
     }
+   
 }
