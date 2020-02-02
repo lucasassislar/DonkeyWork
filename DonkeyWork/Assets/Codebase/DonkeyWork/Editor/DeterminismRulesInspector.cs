@@ -20,7 +20,7 @@ namespace DonkeyWork {
             if (this.targets != null && this.targets.Length <= 1) {
                 DeterminismRules det = (DeterminismRules)target;
 
-                if (det.bLoaded) { 
+                if (!det.bLoaded || det.rules == null ) { 
                     det.Load();
                     if (det.rules == null) {
                         det.rules = new List<DeterministicRule>();

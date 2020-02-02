@@ -169,6 +169,51 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   timeToCallBoss: 2
+--- !u!114 &2210944093004701707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595316062571371606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf28ab1ced3c2ca4a9d56cdf9479220e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strDetKey: Office
+  strTagToCheck: PlayerAttack
+  nDay: -1
+  bExpectedValue: 1
+  bChangeValue: 0
+  bNewValue: 0
+  eventOnTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  eventOnTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  eventOnAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  timeToCallBoss: 2
 --- !u!54 &5854406008109976444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -351,9 +396,85 @@ Transform:
   - {fileID: 8617021108729217569}
   - {fileID: 2997176758712988143}
   - {fileID: 4736543244549167686}
+  - {fileID: 7000702670902352717}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &161722237051372914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7858050448828669668}
+    m_Modifications:
+    - target: {fileID: 6654151996401216739, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_Name
+      value: Galpao
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d15b75d97b2b4247a267211153fccb8, type: 3}
+--- !u!4 &7000702670902352717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7141003084221242943, guid: 0d15b75d97b2b4247a267211153fccb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 161722237051372914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5111311821886149027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,6 +636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: eventOnTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190174929922078478, guid: 306f1e34e6d48f6409317727b2c88e7d,
+        type: 3}
+      propertyPath: nDay
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 783171304539326991, guid: 306f1e34e6d48f6409317727b2c88e7d,
         type: 3}
