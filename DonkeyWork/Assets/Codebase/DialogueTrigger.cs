@@ -6,7 +6,6 @@ using UnityEngine.Events;
 namespace DonkeyWork {
     public class DialogueTrigger : MonoBehaviour {
         public UnityEvent Activatedialogue;
-
         public UnityEvent Deactivatedialogue;
 
         public string tagToCheck = "Player";

@@ -12,6 +12,15 @@ using UnityEditor;
 namespace DonkeyWork {
     public class SpriteThicc : MonoBehaviour {
         public float fThiccness = 0.5f;
+        public float fOffsetZ = 0;
+
+        [Serializable]
+        public class ColorThiccness {
+            public Color32 colToFilter = new Color32(0, 0, 0, 255);
+            public float fNewThicness = 0.5f;
+        }
+
+        public List<ColorThiccness> customColors;
 
         public Material matReference;
 
@@ -33,6 +42,19 @@ namespace DonkeyWork {
             }
         }
 
+        public bool ColorClose(Color32 a, Color32 b) {
+            int difR = Math.Abs(a.r - b.r);
+            int difG = Math.Abs(a.g - b.g);
+            int difB = Math.Abs(a.b - b.b);
+
+            const int safeNumber = 3;
+
+            if (difR < safeNumber && difG < safeNumber && difB < safeNumber) {
+                return true;
+            }
+            return false;
+        }
+
         public void GenerateMesh() {
             DeleteMesh();
 
@@ -46,20 +68,26 @@ namespace DonkeyWork {
 
             Sprite sprite = spriteRenderer.sprite;
             Texture2D texture = sprite.texture;
-            Color[] pixels = texture.GetPixels();
+            Color32[] pixels = texture.GetPixels32();
 
             List<Vector3> vertices = new List<Vector3>();
             List<int> indices = new List<int>();
             List<Color32> colors = new List<Color32>();
 
-            Vector3 vCenter = transform.position;
             Vector3 vMin = spriteRenderer.bounds.size * -0.5F;
             Vector3 vMax = spriteRenderer.bounds.size * 0.5f;
+            Debug.DrawLine(vMin, vMax, Color.red, 15);
 
-            float xSize = (vMax.x - vMin.x) / (float)texture.width;
-            float ySize = (vMax.y - vMin.y) / (float)texture.height;
+            Rect rect = sprite.rect;
+            int startX = (int)rect.x;
+            int startY = (int)rect.y;
+            int endX = (int)(rect.width + rect.x);
+            int endY = (int)(rect.height + rect.y);
 
-            Vector3 invScale = transform.parent.localScale;
+            float xSize = (vMax.x - vMin.x) / (float)rect.width;
+            float ySize = (vMax.y - vMin.y) / (float)rect.height;
+
+            Vector3 invScale = transform.lossyScale;
             invScale.x = 1 / invScale.x;
             invScale.y = 1 / invScale.y;
             invScale.z = 1 / invScale.z;
@@ -67,30 +95,47 @@ namespace DonkeyWork {
             GameObject childObj = new GameObject("MeshChild");
             childObj.transform.parent = this.transform;
 
-            childObj.transform.localPosition = new Vector3(0, 0, 0);
+            childObj.transform.localPosition = new Vector3(0, 0, fOffsetZ);
             childObj.transform.localScale = Vector3.one;
             spriteRenderer.enabled = false;
 
-            for (int x = 0; x < texture.width; x++) {
-                for (int y = 0; y < texture.height; y++) {
+            List<Color32> uniqueColors = new List<Color32>();
+
+            for (int x = (int)rect.x; x < endX; x++) {
+                for (int y = (int)rect.y; y < endY; y++) {
                     int index = x + (y * texture.width);
-                    Color color = pixels[index];
-                    Color32 vecColor = new Color32((byte)(color.r * 255), (byte)(color.g * 255), (byte)(color.b * 255), (byte)(color.a * 255));
+                    Color32 color = pixels[index];
 
                     if (color.a < 0.1f) {
                         continue;
                     }
 
-                    // make a cube
-                    Vector3 vCubeTopLeft = vMin + new Vector3(x * xSize, y * ySize, 0);
-                    Vector3 vCubeTopRight = vMin + new Vector3((x + 1) * xSize, y * ySize, 0);
-                    Vector3 vCubeBottomLeft = vMin + new Vector3(x * xSize, (y + 1) * ySize, 0);
-                    Vector3 vCubeBottomRight = vMin + new Vector3((x + 1) * xSize, (y + 1) * ySize, 0);
+                    int actualX = x - startX;
+                    int actualY = y - startY;
 
-                    Vector3 vCubeTopLeftBack = vMin + new Vector3(x * xSize, y * ySize, fThiccness);
-                    Vector3 vCubeTopRightBack = vMin + new Vector3((x + 1) * xSize, y * ySize, fThiccness);
-                    Vector3 vCubeBottomLeftBack = vMin + new Vector3(x * xSize, (y + 1) * ySize, fThiccness);
-                    Vector3 vCubeBottomRightBack = vMin + new Vector3((x + 1) * xSize, (y + 1) * ySize, fThiccness);
+                    float startThicness = 0f;
+                    ColorThiccness filtered = customColors.FirstOrDefault(c => ColorClose(c.colToFilter, color));
+                    if (filtered != null) {
+                        startThicness = fThiccness - filtered.fNewThicness;
+                    } else {
+                        //continue;
+                    }
+
+                    if (!uniqueColors.Contains(color)) {
+                        uniqueColors.Add(color);
+                        Debug.Log($"Unique color: {color}");
+                    }
+
+                    // make a cube
+                    Vector3 vCubeTopLeft = vMin + new Vector3(actualX * xSize, actualY * ySize, startThicness);
+                    Vector3 vCubeTopRight = vMin + new Vector3((actualX + 1) * xSize, actualY * ySize, startThicness);
+                    Vector3 vCubeBottomLeft = vMin + new Vector3(actualX * xSize, (actualY + 1) * ySize, startThicness);
+                    Vector3 vCubeBottomRight = vMin + new Vector3((actualX + 1) * xSize, (actualY + 1) * ySize, startThicness);
+
+                    Vector3 vCubeTopLeftBack = vMin + new Vector3(actualX * xSize, actualY * ySize, fThiccness);
+                    Vector3 vCubeTopRightBack = vMin + new Vector3((actualX + 1) * xSize, actualY * ySize, fThiccness);
+                    Vector3 vCubeBottomLeftBack = vMin + new Vector3(actualX * xSize, (actualY + 1) * ySize, fThiccness);
+                    Vector3 vCubeBottomRightBack = vMin + new Vector3((actualX + 1) * xSize, (actualY + 1) * ySize, fThiccness);
 
                     vCubeTopLeft = Multiply(vCubeTopLeft, invScale);
                     vCubeTopRight = Multiply(vCubeTopRight, invScale);
@@ -226,8 +271,9 @@ namespace DonkeyWork {
             meshFilter.mesh = mesh;
 
             // save material on database
-            AssetDatabase.CreateAsset(new Material(matReference), matName);
-            meshRen.sharedMaterial = AssetDatabase.LoadAssetAtPath<Material>(matName);
+            //AssetDatabase.CreateAsset(new Material(matReference), matName);
+            //meshRen.sharedMaterial = AssetDatabase.LoadAssetAtPath<Material>(matName);
+            meshRen.sharedMaterial = matReference;
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
