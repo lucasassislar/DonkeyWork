@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5218962109595706559}
   m_Layer: 5
-  m_Name: Character_Boss
+  m_Name: TextBalloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 02b2af1ddb6eac74abef449b2df8cd8c, type: 3}
   - {fileID: 8300000, guid: a9690ee23a85f384dbad91606b7c9276, type: 3}
   - {fileID: 8300000, guid: e598fe65719ed0f4aaae0b16cfe020f7, type: 3}
+  playOnEnable: 0
 --- !u!1001 &814882651326781265
 PrefabInstance:
   m_ObjectHideFlags: 0

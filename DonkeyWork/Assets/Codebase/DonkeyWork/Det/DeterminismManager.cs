@@ -42,6 +42,7 @@ namespace DonkeyWork {
 
         public void Start() {
             if (rulesAsset.LoadedFirstDay) {
+                ExecuteEvent();
                 return;
             }
 
@@ -53,6 +54,10 @@ namespace DonkeyWork {
                 rule.Value = rule.StartValue;
             }
 
+            ExecuteEvent();
+        }
+
+        private void ExecuteEvent() {
             switch (rulesAsset.nCurrentDay) {
                 case 1:
                     eventsDay1.Invoke();

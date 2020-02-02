@@ -12,6 +12,8 @@ namespace DonkeyWork {
         private float fSpinTimer;
         private bool bGoingRight;
         private Vector3 vSpinStartAngle;
+        private AudioSource audioSource;
+        public AudioClip kicksound;
 
         [Header("Animation")]
         public AnimationCurve curveRotation = AnimationCurve.EaseInOut(0, 0, 1, 1);
@@ -29,6 +31,7 @@ namespace DonkeyWork {
         public PlayerWorldState WorldState { get; private set; }
 
         void Start() {
+            audioSource = GetComponent<AudioSource>();
             playerController = GetComponent<CharacterController>();
             spriteAnimation = GetComponent<SpritePlaneAnimation>();
             animator = GetComponent<Animator>();
@@ -49,6 +52,8 @@ namespace DonkeyWork {
                 keyboard.spaceKey.isPressed) {
                 animator.Play("Attack");
                 spriteAnimation.Play("Kicking");
+                audioSource.clip = kicksound;
+                audioSource.Play();
             }
 
             float fXMovement = 0;

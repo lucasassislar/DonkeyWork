@@ -7,7 +7,7 @@ using DonkeyWork;
 
 public class DayleMeeting : MonoBehaviour
 {
-   
+    public PlayableDirector gameStartTimeline;
     public PlayableDirector birdsTalkingTimeline;
     public PlayableDirector birdsTalkingOtherDaysTimeline;
 
@@ -19,12 +19,15 @@ public class DayleMeeting : MonoBehaviour
  
     public void StartMeeting()
     {
+        Debug.Log("startmeeting");
         if (DeterminismManager.Instance.rulesAsset.nCurrentDay == 1)
         {
+            Debug.Log("startmeeting__________dia 1");
             birdsTalkingTimeline.Play();
         }
         else
         {
+            Debug.Log("startmeeting__________outrosdias");
             birdsTalkingOtherDaysTimeline.Play();
         }
       
@@ -38,8 +41,9 @@ public class DayleMeeting : MonoBehaviour
             return;
         }
 
-        if (waitForPlayerAnswer && (keyboard.xKey.isPressed || keyboard.yKey.isPressed || keyboard.zKey.isPressed))
+        if (waitForPlayerAnswer && (keyboard.xKey.wasPressedThisFrame || keyboard.yKey.wasPressedThisFrame || keyboard.zKey.wasPressedThisFrame))
         {
+            Debug.Log("playerpressed_______________");
             birdsReactTimeline.Play();
         }
         if ((keyboard.escapeKey.isPressed ) && !BirdsLeaving)
@@ -58,11 +62,17 @@ public class DayleMeeting : MonoBehaviour
     }
     public void PlayerAnswer()
     {
+        Debug.Log("waiting for answer true_______________");
         waitForPlayerAnswer = true;
     }
     public void Reset()
     {
+
         BirdsLeaving = false;
         waitForPlayerAnswer = false;
+    }
+    public void GaranteJogoComeca()
+    {
+        gameStartTimeline.Play();
     }
 }
