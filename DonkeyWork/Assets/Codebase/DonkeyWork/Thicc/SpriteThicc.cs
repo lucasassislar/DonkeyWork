@@ -35,6 +35,12 @@ namespace DonkeyWork {
         public void DeleteMesh() {
             List<GameObject> allObjs = new List<GameObject>();
             foreach (Transform tr in transform) {
+                MeshFilter meshRen = tr.GetComponent<MeshFilter>();
+                if (meshRen) {
+                    string path = AssetDatabase.GetAssetPath(meshRen.sharedMesh);
+                    AssetDatabase.DeleteAsset(path);
+                }
+
                 allObjs.Add(tr.gameObject);
             }
             for (int i = 0; i < allObjs.Count; i++) {
@@ -121,7 +127,6 @@ namespace DonkeyWork {
             invScale.x = 1 / invScale.x;
             invScale.y = 1 / invScale.y;
             invScale.z = 1 / invScale.z;
-
 
             spriteRenderer.enabled = false;
 
