@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,6 @@ namespace DonkeyWork {
         public static DeterminismManager Instance { get; private set; }
 
         public DeterminismRules rulesAsset;
-        public bool bIsFirstScene;
 
         public UnityEvent eventsDay1;
         public UnityEvent eventsDay2;
@@ -24,16 +24,29 @@ namespace DonkeyWork {
 
         public DeterminismManager() {
             Instance = this;
+#if UNITY_EDITOR
+            EditorApplication.playmodeStateChanged += ModeChanged;
+#endif
         }
 
+        static void ModeChanged() {
+#if UNITY_EDITOR
+            if (!EditorApplication.isPlayingOrWillChangePlaymode &&
+                 EditorApplication.isPlaying) {
+                // exit play mode
+                DeterminismManager.Instance?.rulesAsset.ResetFirstDay();
+            }
+#endif
+        }
+
+
         public void Start() {
-            if (!bIsFirstScene) {
+            if (rulesAsset.LoadedFirstDay) {
                 return;
             }
 
+            rulesAsset.SetLoadFirstDay();
             rulesAsset.Load();
-
-            rulesAsset.nCurrentDay = 1;
 
             for (int i = 0; i < rulesAsset.rules.Count; i++) {
                 DeterministicRule rule = rulesAsset.rules[i];
@@ -64,7 +77,6 @@ namespace DonkeyWork {
             Debug.Log("SwapDAY_______-");
             rulesAsset.nCurrentDay = rulesAsset.nCurrentDay + 1;
             SceneManager.LoadScene("Day_1");
-            
         }
 
         public bool IsRuleEnabled(string key) {
