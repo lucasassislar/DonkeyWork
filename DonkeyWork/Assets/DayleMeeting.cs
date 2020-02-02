@@ -42,8 +42,11 @@ public class DayleMeeting : MonoBehaviour
         {
             birdsReactTimeline.Play();
         }
-        if (waitForPlayerAnswer && (keyboard.escapeKey.isPressed ) && !BirdsLeaving)
+        if ((keyboard.escapeKey.isPressed ) && !BirdsLeaving)
         {
+            birdsTalkingTimeline.Stop();
+            birdsTalkingOtherDaysTimeline.Stop();
+
             BirdsLeave();
            
         }
