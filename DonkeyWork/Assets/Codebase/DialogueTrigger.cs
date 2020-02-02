@@ -25,5 +25,14 @@ namespace DonkeyWork {
                 Deactivatedialogue.Invoke();
             }
         }
+        public void ActivateDialogueFromTimeline()
+        {
+            Activatedialogue.Invoke();
+        }
+        public void DeactivateDialogueFromTimeline()
+        {
+            Deactivatedialogue.Invoke();
+        }
+
     }
 }
