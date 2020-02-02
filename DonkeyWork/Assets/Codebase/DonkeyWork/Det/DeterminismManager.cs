@@ -68,11 +68,11 @@ namespace DonkeyWork {
         }
 
         public bool IsRuleEnabled(string key) {
-            return rulesAsset.rules.First(c => c.Name.Equals(key)).Value;
+            return rulesAsset.GetRuleByName(key).Value;
         }
 
         public int RuleChangeDay(string key) {
-            return rulesAsset.rules.First(c => c.Name.Equals(key)).DayEnabled;
+            return rulesAsset.GetRuleByName(key).DayEnabled;
         }
 
         public bool IsToday(int nDay) {
@@ -81,7 +81,7 @@ namespace DonkeyWork {
 
         public void ChangeRuleValue(string strKey, bool bNewValue) {
             Debug.Log($"Changed rule {strKey} to {bNewValue}");
-            DeterministicRule rule = rulesAsset.rules.First(c => c.Name.Equals(strKey));
+            DeterministicRule rule = rulesAsset.GetRuleByName(strKey);
             rule.Value = bNewValue;
             rule.DayEnabled = rulesAsset.nCurrentDay;
         }
