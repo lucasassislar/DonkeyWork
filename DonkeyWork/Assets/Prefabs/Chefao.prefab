@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 148476085589821342}
   - component: {fileID: 148476085589821341}
   - component: {fileID: 148476085589821340}
-  - component: {fileID: 1929616536}
   m_Layer: 0
   m_Name: Chefao
   m_TagString: Untagged
@@ -61,27 +60,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9972785, y: 3.6314645, z: 0.10096821}
-  m_Center: {x: -0.86064196, y: -3.4217374, z: 0.017731369}
---- !u!95 &1929616536
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148476085589821339}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_Size: {x: 1.9972785, y: 3.39, z: 0.10096821}
+  m_Center: {x: -0.86064196, y: -1.8, z: 0.017731369}
 --- !u!1 &8422827070875527125
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3868393825484792367}
   - component: {fileID: 2375940147431401980}
+  - component: {fileID: 4341997889353920492}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -107,8 +88,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8422827070875527125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.91, y: -3.52, z: 0}
-  m_LocalScale: {x: 14.382327, y: 14.382327, z: 14.382327}
+  m_LocalPosition: {x: -0.91, y: -1.67, z: 0}
+  m_LocalScale: {x: 6.147876, y: 6.147876, z: 6.147876}
   m_Children: []
   m_Father: {fileID: 148476085589821342}
   m_RootOrder: 0
@@ -150,10 +131,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4822372516559047933, guid: 9cacb8accfa79e94aafcfbe998486b18,
+  m_Sprite: {fileID: 5379241019876509888, guid: 9736cc09b325944c99777b952403add7,
     type: 3}
-  m_Color: {r: 1, g: 0.22822624, b: 0, a: 1}
-  m_FlipX: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.1, y: 0.19}
@@ -162,3 +143,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4341997889353920492
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422827070875527125}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f3e5bfe83f35544a968dd66af99d72a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
