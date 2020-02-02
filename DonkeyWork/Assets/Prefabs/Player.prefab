@@ -51,18 +51,22 @@ MonoBehaviour:
   - strName: Idle
     nStartFrame: 0
     nEndFrame: 4
+    nSheetLine: 0
     fAnimationFPS: 6
   - strName: Walking
     nStartFrame: 8
     nEndFrame: 12
+    nSheetLine: 0
     fAnimationFPS: 6
   - strName: Kicking
     nStartFrame: 5
     nEndFrame: 8
+    nSheetLine: 0
     fAnimationFPS: 6
   trFrameParent: {fileID: 7183799880064154043}
   matSprite: {fileID: 2100000, guid: 2094dd5c5d82c3f4f873626eed47c736, type: 2}
   nSpriteSheetFrames: 13
+  nSpriteLines: 0
 --- !u!114 &2804006946110307409
 MonoBehaviour:
   m_ObjectHideFlags: 0

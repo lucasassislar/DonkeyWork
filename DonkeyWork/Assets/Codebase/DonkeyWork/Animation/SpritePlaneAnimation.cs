@@ -15,13 +15,15 @@ namespace DonkeyWork {
         public Material matSprite;
 
         public int nSpriteSheetFrames = 13;
+        public int nSpriteLines = 0;
+
+        public bool bSpecialNewDebug = false;
 
         private int nCurrentFrame = 0;
         private float fTimer = 0;
         private float fTimeBetwenFrames;
         private SpriteAnimation currentAnim;
         private string strQueuedAnimation;
-        private float fFrameSize;
         private List<MeshRenderer> meshFrames;
 
         private void Start() {
@@ -62,7 +64,10 @@ namespace DonkeyWork {
         }
 
         private void Update() {
-            fFrameSize = 1 / (float)nSpriteSheetFrames;
+            if (currentAnim == null) {
+                return;
+            }
+
             fTimeBetwenFrames = 1 / currentAnim.fAnimationFPS;
 
             fTimer += Time.deltaTime;
@@ -99,7 +104,27 @@ namespace DonkeyWork {
         }
 
         private void UpdateMaterial() {
-            matSprite.SetVector("_MainTex_ST", new Vector4(fFrameSize, 1, nCurrentFrame * fFrameSize, 0));
+            float fHorFrameSize = 1 / (float)nSpriteSheetFrames;
+            float fVerFrameSize = 1 / (float)nSpriteLines;
+            float fOffsetX = nCurrentFrame * fHorFrameSize;
+            float fOffsetY = fVerFrameSize * (float)currentAnim.nSheetLine;
+
+            if (bSpecialNewDebug) {
+                matSprite.SetVector("_MainTex_ST", new Vector4(
+                    fHorFrameSize,
+                    fVerFrameSize,
+                    fOffsetX,
+                    0));
+            }else {
+                if (matSprite.name.ToLower().Contains("blue")) {
+                    Debug.Log($"awduhwa {this.name}");
+                }
+                matSprite.SetVector("_MainTex_ST", new Vector4(
+                    fHorFrameSize,
+                    fVerFrameSize,
+                    fOffsetX,
+                    fOffsetY));
+            }
         }
     }
 }

@@ -157,9 +157,12 @@ MonoBehaviour:
   - strName: Idle
     nStartFrame: 0
     nEndFrame: 3
+    nSheetLine: 0
     fAnimationFPS: 12
+  trFrameParent: {fileID: 0}
   matSprite: {fileID: 2100000, guid: f4e9b4c67d1873748b754f1243f7625b, type: 2}
   nSpriteSheetFrames: 4
+  nSpriteLines: 0
 --- !u!1 &8422827070875527125
 GameObject:
   m_ObjectHideFlags: 0
