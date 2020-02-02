@@ -55,8 +55,8 @@ namespace DonkeyWork {
             }
         }
 
-        public void SwapDay(int nDay) {
-            rulesAsset.nCurrentDay = nDay;
+        public void SwapDay() {
+            rulesAsset.nCurrentDay = rulesAsset.nCurrentDay + 1;
             SceneManager.LoadScene("Day_1");
         }
 
