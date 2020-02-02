@@ -14,8 +14,6 @@ namespace DonkeyWork {
         public DeterminismRules rulesAsset;
         public bool bIsFirstScene;
 
-        public int nCurrentDay = 1;
-
         public UnityEvent eventsDay1;
         public UnityEvent eventsDay2;
         public UnityEvent eventsDay3;
@@ -38,7 +36,7 @@ namespace DonkeyWork {
                 rule.Value = rule.StartValue;
             }
 
-            switch (nCurrentDay) {
+            switch (rulesAsset.nCurrentDay) {
                 case 1:
                     eventsDay1.Invoke();
                     break;
@@ -57,8 +55,8 @@ namespace DonkeyWork {
             }
         }
 
-        public void SwapDay(int nDay) {
-            nCurrentDay = nDay;
+        public void SwapDay() {
+            rulesAsset.nCurrentDay = rulesAsset.nCurrentDay + 1;
             SceneManager.LoadScene("Day_1");
         }
 

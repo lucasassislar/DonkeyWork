@@ -21,7 +21,6 @@ namespace DonkeyWork {
         }
 
         public List<ColorThiccness> customColors;
-
         public Material matReference;
 
         private SpriteRenderer spriteRenderer;
@@ -32,17 +31,39 @@ namespace DonkeyWork {
             return new Vector3(a.x * b.x, a.y * b.y, a.z * b.z);
         }
 
+        public bool ColorClose(Color32 a, Color32 b) {
+            int difR = Math.Abs(a.r - b.r);
+            int difG = Math.Abs(a.g - b.g);
+            int difB = Math.Abs(a.b - b.b);
+
+            const int safeNumber = 3;
+
+            if (difR < safeNumber && difG < safeNumber && difB < safeNumber) {
+                return true;
+            }
+            return false;
+        }
+
         public void DeleteMesh() {
+#if UNITY_EDITOR
             List<GameObject> allObjs = new List<GameObject>();
             foreach (Transform tr in transform) {
+                MeshFilter meshRen = tr.GetComponent<MeshFilter>();
+                if (meshRen) {
+                    string path = AssetDatabase.GetAssetPath(meshRen.sharedMesh);
+                    AssetDatabase.DeleteAsset(path);
+                }
+
                 allObjs.Add(tr.gameObject);
             }
             for (int i = 0; i < allObjs.Count; i++) {
                 DestroyImmediate(allObjs[i]); ;
             }
+#endif
         }
 
         public void ListColors() {
+#if UNITY_EDITOR
             spriteRenderer = GetComponent<SpriteRenderer>();
 
             Sprite sprite = spriteRenderer.sprite;
@@ -67,26 +88,16 @@ namespace DonkeyWork {
 
                     if (!uniqueColors.Contains(color)) {
                         uniqueColors.Add(color);
-                        Debug.Log($"Unique color: {color}");
+                        string html = ColorUtility.ToHtmlStringRGB(color);
+                        Debug.Log($"Unique color: {color} - {html}");
                     }
                 }
             }
-        }
-
-        public bool ColorClose(Color32 a, Color32 b) {
-            int difR = Math.Abs(a.r - b.r);
-            int difG = Math.Abs(a.g - b.g);
-            int difB = Math.Abs(a.b - b.b);
-
-            const int safeNumber = 3;
-
-            if (difR < safeNumber && difG < safeNumber && difB < safeNumber) {
-                return true;
-            }
-            return false;
+#endif
         }
 
         public void GenerateMesh() {
+#if UNITY_EDITOR
             DeleteMesh();
 
             string folder = $"Assets//Generated//";
@@ -121,7 +132,6 @@ namespace DonkeyWork {
             invScale.x = 1 / invScale.x;
             invScale.y = 1 / invScale.y;
             invScale.z = 1 / invScale.z;
-
 
             spriteRenderer.enabled = false;
 
@@ -296,9 +306,11 @@ namespace DonkeyWork {
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+#endif
         }
 
         private void ConcateMesh(List<Vector3> vertices, List<Color32> colors, List<int> indices) {
+#if UNITY_EDITOR
             string folder = $"Assets//Generated//";
             string meshName = $"{folder}//Mat_{name}_{Guid.NewGuid()}.asset";
 
@@ -320,6 +332,7 @@ namespace DonkeyWork {
             AssetDatabase.CreateAsset(mesh, meshName);
             meshFilter.mesh = mesh;
             meshRen.sharedMaterial = matReference;
+#endif
         }
     }
 }

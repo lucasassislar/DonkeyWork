@@ -1,18 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Playables;
+using UnityEngine.InputSystem;
 public class DayleMeeting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayableDirector birdsTalkingTimeline;
+    public PlayableDirector birdsReactTimeline;
+    public PlayableDirector birdsLeaveTimeline;
+    public bool day1;
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            return;
+        }
+        if (day1)
+        {
+            birdsLeaveTimeline.Play();
+        }
+        else
+        {
+           if (keyboard.xKey.isPressed ||
+              keyboard.yKey.isPressed ||
+              keyboard.zKey.isPressed)
+            {
+                birdsReactTimeline.Play();
+            }
+        }
+       
+
     }
 }
