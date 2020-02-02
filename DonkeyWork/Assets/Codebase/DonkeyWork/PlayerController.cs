@@ -9,6 +9,14 @@ namespace DonkeyWork {
         private SpritePlaneAnimation spriteAnimation;
         private CharacterController playerController;
         private Animator animator;
+        private float fSpinTimer;
+        private bool bGoingRight;
+        private Vector3 vSpinStartAngle;
+
+        [Header("Animation")]
+        public AnimationCurve curveRotation = AnimationCurve.EaseInOut(0, 0, 1, 1);
+        public float fSpinTime = 0.2f;
+        public Transform trBody;
 
         [Header("Movement")]
         public float fMovementSpeed = 5;
@@ -44,22 +52,48 @@ namespace DonkeyWork {
             }
 
             float fXMovement = 0;
+
+            bool bFnGoingRight = false;
+            bool bChangedDir = false;
+
             if (keyboard.leftArrowKey.isPressed ||
                 keyboard.aKey.isPressed) {
                 fXMovement -= 1;
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
 
+                if (bGoingRight && fSpinTimer > fSpinTime) {
+                    bChangedDir = true;
+                }
+                bFnGoingRight = false;
+            }
             if (keyboard.rightArrowKey.isPressed ||
                 keyboard.dKey.isPressed) {
                 fXMovement += 1;
-                transform.localScale = new Vector3(1, 1, 1);
+
+                if (!bGoingRight && fSpinTimer > fSpinTime) {
+                    bChangedDir = true;
+                }
+                bFnGoingRight = true;
+            }
+
+            fSpinTimer += Time.deltaTime;
+            if (fXMovement != 0) {
+                if (bChangedDir) {
+                    fSpinTimer = 0;
+                    vSpinStartAngle = trBody.localRotation.eulerAngles;
+                }
+                bGoingRight = bFnGoingRight;
+            }
+
+            if (bGoingRight) {
+                trBody.localRotation = Quaternion.Euler(Vector3.Lerp(vSpinStartAngle, new Vector3(0, 0, 0), Math.Min(1, curveRotation.Evaluate(fSpinTimer / fSpinTime))));
+            } else {
+                trBody.localRotation = Quaternion.Euler(Vector3.Lerp(vSpinStartAngle, new Vector3(0, 180, 0), Math.Min(1, curveRotation.Evaluate(fSpinTimer / fSpinTime))));
             }
 
             bool bWaitFinish = spriteAnimation.CurrentAnimation == "Kicking";
             if (fXMovement > 0.1f || fXMovement < -0.1f) {
                 spriteAnimation.Play("Walking", bWaitFinish);
-            }else {
+            } else {
                 spriteAnimation.Play("Idle", bWaitFinish);
             }
 

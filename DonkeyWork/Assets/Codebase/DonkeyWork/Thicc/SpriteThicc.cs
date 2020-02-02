@@ -103,11 +103,36 @@ namespace DonkeyWork {
             string folder = $"Assets//Generated//";
             Directory.CreateDirectory(folder);
 
-            string matName = $"{folder}//Mat_{name}_{Guid.NewGuid()}.mat";
-
             spriteRenderer = GetComponent<SpriteRenderer>();
 
             Sprite sprite = spriteRenderer.sprite;
+            GenerateSubMesh(sprite);
+#endif 
+        }
+
+        public void GenerateSpriteSheet() {
+#if UNITY_EDITOR
+            DeleteMesh();
+
+            string folder = $"Assets//Generated//";
+            Directory.CreateDirectory(folder);
+
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+            string spriteSheet = AssetDatabase.GetAssetPath(spriteRenderer.sprite);
+            Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(spriteSheet).OfType<Sprite>().ToArray();
+
+            for (int i = 0; i < sprites.Length; i++) {
+                Sprite sprite = sprites[i];
+                GenerateSubMesh(sprite);
+            }
+#endif 
+        }
+
+
+
+        public void GenerateSubMesh(Sprite sprite) {
+#if UNITY_EDITOR
             Texture2D texture = sprite.texture;
             Color32[] pixels = texture.GetPixels32();
 
@@ -211,13 +236,13 @@ namespace DonkeyWork {
                     colors.Add(color);
                     colors.Add(color);
 
-                    indices.Add(vertices.Count - 2);
-                    indices.Add(vertices.Count - 3);
                     indices.Add(vertices.Count - 4);
-
                     indices.Add(vertices.Count - 3);
                     indices.Add(vertices.Count - 2);
+
                     indices.Add(vertices.Count - 1);
+                    indices.Add(vertices.Count - 2);
+                    indices.Add(vertices.Count - 3);
 
                     // left plane
                     vertices.Add(vCubeTopLeft);

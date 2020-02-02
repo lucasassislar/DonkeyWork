@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.IO;
 
 public static class ScriptableObjectUtility {
+#if UNITY_EDITOR
     /// <summary>
     //	This makes it easy to create, name and place unique new ScriptableObject asset files.
     /// </summary>
@@ -25,4 +28,5 @@ public static class ScriptableObjectUtility {
         EditorUtility.FocusProjectWindow();
         Selection.activeObject = asset;
     }
+#endif
 }
