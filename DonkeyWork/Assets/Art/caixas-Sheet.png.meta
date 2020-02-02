@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 2bb99d6dbd76c46f982eb220e2fd3953
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4298891117297906827
+    second: caixas-Sheet_0
+  - first:
+      213: -1763486156482079196
+    second: caixas-Sheet_1
+  - first:
+      213: 260524022185191942
+    second: caixas-Sheet_2
+  - first:
+      213: -6858199619252055037
+    second: caixas-Sheet_3
+  - first:
+      213: 3472557706252675490
+    second: caixas-Sheet_4
+  - first:
+      213: -8341935187386524013
+    second: caixas-Sheet_5
+  - first:
+      213: -3316843366336638426
+    second: caixas-Sheet_6
+  - first:
+      213: 5175796202593995775
+    second: caixas-Sheet_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +64,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,7 +106,175 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: caixas-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220cf52de21443946ae9296b8ac2b20d
+      internalID: -4298891117297906827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 54
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a7241a6e9d67f4e852349f5c6fa5c3
+      internalID: -1763486156482079196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 54
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fd8d9ce94bbc94cbed8fba2b161624
+      internalID: 260524022185191942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 54
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a47f29f637f6a24ebd3de3d919762ac
+      internalID: -6858199619252055037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 54
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e042ea395331adc4bbdb8c5510053624
+      internalID: 3472557706252675490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 54
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93631d032767cb0438518e2776be7a13
+      internalID: -8341935187386524013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 54
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de93fbdc948aff49ab1f927ef82c214
+      internalID: -3316843366336638426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caixas-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f776de4465485a4c92ecea7ae55683f
+      internalID: 5175796202593995775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
