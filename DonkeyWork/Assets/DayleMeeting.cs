@@ -16,14 +16,8 @@ public class DayleMeeting : MonoBehaviour
 
     private bool waitForPlayerAnswer;
     private bool BirdsLeaving;
-    void OnTriggerEnter(Collider c)
-    {
-        if (c.transform.tag == "Player")
-        {
-            StartMeeting();
-        }
-    }
-    void StartMeeting()
+ 
+    public void StartMeeting()
     {
         if (DeterminismManager.Instance.rulesAsset.nCurrentDay == 1)
         {
