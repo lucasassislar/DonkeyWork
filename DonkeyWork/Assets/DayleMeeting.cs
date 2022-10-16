@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.InputSystem;
 using DonkeyWork;
 
 public class DayleMeeting : MonoBehaviour
@@ -35,25 +34,25 @@ public class DayleMeeting : MonoBehaviour
     void Update()
     {
 
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard == null)
-        {
-            return;
-        }
+        //Keyboard keyboard = Keyboard.current;
+        //if (keyboard == null)
+        //{
+        //    return;
+        //}
 
-        if (waitForPlayerAnswer && (keyboard.xKey.wasPressedThisFrame || keyboard.yKey.wasPressedThisFrame || keyboard.zKey.wasPressedThisFrame))
-        {
-            Debug.Log("playerpressed_______________");
-            birdsReactTimeline.Play();
-        }
-        if ((keyboard.escapeKey.isPressed ) && !BirdsLeaving)
-        {
-            birdsTalkingTimeline.Stop();
-            birdsTalkingOtherDaysTimeline.Stop();
+        //if (waitForPlayerAnswer && (keyboard.xKey.wasPressedThisFrame || keyboard.yKey.wasPressedThisFrame || keyboard.zKey.wasPressedThisFrame))
+        //{
+        //    Debug.Log("playerpressed_______________");
+        //    birdsReactTimeline.Play();
+        //}
+        //if ((keyboard.escapeKey.isPressed ) && !BirdsLeaving)
+        //{
+        //    birdsTalkingTimeline.Stop();
+        //    birdsTalkingOtherDaysTimeline.Stop();
 
-            BirdsLeave();
+        //    BirdsLeave();
            
-        }
+        //}
     }
     public void BirdsLeave()
     {

@@ -254,6 +254,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &-8965323952449809581
@@ -1714,6 +1715,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!74 &-7464431855919341232
@@ -3566,6 +3568,7 @@ MonoBehaviour:
   m_InfiniteClipTimeOffset: 0
   m_InfiniteClipRemoveOffset: 0
   m_InfiniteClipApplyFootIK: 1
+  mInfiniteClipLoop: 0
   m_MatchTargetFields: 63
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
@@ -3700,6 +3703,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &-4925507074347454342
@@ -3838,6 +3842,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &-3924630741512896260
@@ -5222,6 +5227,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!74 &-2582864507346457728
@@ -5930,6 +5936,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &-1550943787019494700
@@ -5951,6 +5958,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &-1085848877293882384
@@ -6415,6 +6423,7 @@ MonoBehaviour:
   m_InfiniteClipTimeOffset: 0
   m_InfiniteClipRemoveOffset: 0
   m_InfiniteClipApplyFootIK: 1
+  mInfiniteClipLoop: 0
   m_MatchTargetFields: 63
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
@@ -6696,6 +6705,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &11400000
@@ -6725,6 +6735,7 @@ MonoBehaviour:
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
+    m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: -8965323952449809581}
 --- !u!114 &101149548643036020
@@ -6746,6 +6757,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &223949869845918539
@@ -6767,6 +6779,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &813924298110371297
@@ -8382,6 +8395,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &2728844265954712256
@@ -8415,6 +8429,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &3464496613458164632
@@ -11203,6 +11218,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &4310473503457651287
@@ -12559,6 +12575,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!74 &5045418324960076188
@@ -12958,6 +12975,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &7514947507774751002
@@ -12979,6 +12997,7 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &7708510540608038017
@@ -13247,5 +13266,6 @@ MonoBehaviour:
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
   m_ApplyFootIK: 1
+  m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
